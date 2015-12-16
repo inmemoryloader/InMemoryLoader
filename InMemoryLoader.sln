@@ -3,15 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryLoader", "InMemoryLoader\InMemoryLoader.csproj", "{03EBE292-5758-4919-A3A9-AAA31313FC1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryLoaderTestComponent", "InMemoryLoaderTestComponent\InMemoryLoaderTestComponent.csproj", "{BD8EB9DA-6BA7-4794-8B06-4C711FEED3FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryLoaderTestConsole", "InMemoryLoaderTestConsole\InMemoryLoaderTestConsole.csproj", "{00536599-60E4-47E1-AFBF-9803767878F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00536599-60E4-47E1-AFBF-9803767878F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00536599-60E4-47E1-AFBF-9803767878F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00536599-60E4-47E1-AFBF-9803767878F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00536599-60E4-47E1-AFBF-9803767878F4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{03EBE292-5758-4919-A3A9-AAA31313FC1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{03EBE292-5758-4919-A3A9-AAA31313FC1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03EBE292-5758-4919-A3A9-AAA31313FC1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03EBE292-5758-4919-A3A9-AAA31313FC1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD8EB9DA-6BA7-4794-8B06-4C711FEED3FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD8EB9DA-6BA7-4794-8B06-4C711FEED3FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD8EB9DA-6BA7-4794-8B06-4C711FEED3FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD8EB9DA-6BA7-4794-8B06-4C711FEED3FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
