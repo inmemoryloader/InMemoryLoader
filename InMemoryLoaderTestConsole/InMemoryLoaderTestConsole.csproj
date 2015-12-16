@@ -46,8 +46,8 @@
     <Folder Include="Code\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InMemoryLoader\InMemoryLoader.csproj">
