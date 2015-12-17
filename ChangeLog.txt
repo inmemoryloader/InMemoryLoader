@@ -1,0 +1,6 @@
+December 17. 2015
+
+Improvements
+
+- Improved log Messages
+- Improved Exception handling

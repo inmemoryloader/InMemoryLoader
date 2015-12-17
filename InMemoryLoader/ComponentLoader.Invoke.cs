@@ -22,8 +22,12 @@ namespace InMemoryLoader
 		/// <param name="paramArgs">Parameter arguments.</param>
 		public Object InvokeMethod (IDynamicClassInfo ClassInfo, string MethodName, Object[] paramArgs)
 		{
-			Object result = ClassInfo.ClassType.InvokeMember (MethodName, BindingFlags.Default | BindingFlags.InvokeMethod, null, ClassInfo.ClassObject, paramArgs);
-			return (result);
+			try {
+				var result = ClassInfo.ClassType.InvokeMember (MethodName, BindingFlags.Default | BindingFlags.InvokeMethod, null, ClassInfo.ClassObject, paramArgs);
+				return (result);
+			} catch (Exception ex) {
+				throw ex;
+			}
 		}
 
 		/// <summary>
@@ -36,8 +40,13 @@ namespace InMemoryLoader
 		/// <param name="paramArgs">Parameter arguments.</param>
 		public Object InvokeMethod (string AssemblyName, string ClassName, string MethodName, Object[] paramArgs)
 		{
-			IDynamicClassInfo classInfo = this.GetClassReference (AssemblyName, ClassName);
-			return (this.InvokeMethod (classInfo, MethodName, paramArgs));
+			try {
+				var classInfo = this.GetClassReference (AssemblyName, ClassName);
+				var result = (this.InvokeMethod (classInfo, MethodName, paramArgs));
+				return result;
+			} catch (Exception ex) {
+				throw ex;
+			}
 		}
 	}
 }
