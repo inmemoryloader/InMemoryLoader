@@ -25,10 +25,10 @@ namespace InMemoryLoaderTestConsole
 		/// </summary>
 
 		// Linux Mono Environment
-		private const string testComponentPath = "/home/kaysta/github.com/InMemoryLoader/InMemoryLoaderTestComponent/bin/Debug/InMemoryLoaderTestComponent.dll";
+		// private const string testComponentPath = "/home/kaysta/github.com/InMemoryLoader/InMemoryLoaderTestComponent/bin/Debug/InMemoryLoaderTestComponent.dll";
 
 		// Windows Environment
-		// private const string testComponentPath = @"C:\Users\kayst\OneDrive\Development\github\InMemoryLoader\InMemoryLoaderTestComponent\bin\Debug\InMemoryLoaderTestComponent.dll";
+		private const string testComponentPath = @"C:\Users\kayst\OneDrive\Development\github\InMemoryLoader\InMemoryLoaderTestComponent\bin\Debug\InMemoryLoaderTestComponent.dll";
 
 		/// <summary>
 		/// The entry point of the program, where the program control starts and ends.
