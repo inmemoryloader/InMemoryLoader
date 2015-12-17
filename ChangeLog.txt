@@ -4,3 +4,6 @@ Improvements
 
 - Improved log Messages
 - Improved Exception handling
+
+https://www.draw.io/
+https://www.gliffy.com/
