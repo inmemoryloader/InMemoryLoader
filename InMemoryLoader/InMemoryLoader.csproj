@@ -43,9 +43,13 @@
     <Compile Include="ComponentLoader.Get.cs" />
     <Compile Include="ComponentLoader.Invoke.cs" />
     <Compile Include="ComponentLoader.Helper.cs" />
+    <Compile Include="Helper\ObjectHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Helper\" />
   </ItemGroup>
 </Project>
