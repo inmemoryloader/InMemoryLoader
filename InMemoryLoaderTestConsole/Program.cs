@@ -68,6 +68,7 @@ namespace InMemoryLoaderTestConsole
 				// Print the Result
 				log.InfoFormat ("Result: {0}", retResult);
 
+
 				Console.ReadKey ();
 			} catch (Exception ex) {
 				log.FatalFormat ("{0}", ex);

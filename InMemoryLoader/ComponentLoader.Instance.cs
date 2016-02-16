@@ -31,11 +31,11 @@ namespace InMemoryLoader
 		/// <summary>
 		/// The assembly references.
 		/// </summary>
-		public Hashtable AssemblyReferences = new Hashtable ();
+		internal Hashtable AssemblyReferences = new Hashtable ();
 		/// <summary>
 		/// The class references.
 		/// </summary>
-		public IDictionary<string, IDynamicClassInfo> ClassReferences;
+		internal IDictionary<string, IDynamicClassInfo> ClassReferences;
 		/// <summary>
 		/// The component registry.
 		/// </summary>
