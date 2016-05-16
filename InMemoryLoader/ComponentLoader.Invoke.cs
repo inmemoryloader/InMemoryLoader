@@ -20,7 +20,7 @@ namespace InMemoryLoader
 		/// <param name="ClassInfo">Class info.</param>
 		/// <param name="MethodName">Method name.</param>
 		/// <param name="paramArgs">Parameter arguments.</param>
-		public Object InvokeMethod (IDynamicClassInfo ClassInfo, string MethodName, Object[] paramArgs)
+		public dynamic InvokeMethod (IDynamicClassInfo ClassInfo, string MethodName, Object[] paramArgs)
 		{
 			try {
 				var result = ClassInfo.ClassType.InvokeMember (MethodName, BindingFlags.Default | BindingFlags.InvokeMethod, null, ClassInfo.ClassObject, paramArgs);
@@ -38,7 +38,7 @@ namespace InMemoryLoader
 		/// <param name="ClassName">Class name.</param>
 		/// <param name="MethodName">Method name.</param>
 		/// <param name="paramArgs">Parameter arguments.</param>
-		public Object InvokeMethod (string AssemblyName, string ClassName, string MethodName, Object[] paramArgs)
+		public dynamic InvokeMethod (string AssemblyName, string ClassName, string MethodName, Object[] paramArgs)
 		{
 			try {
 				var classInfo = this.GetClassReference (AssemblyName, ClassName);
