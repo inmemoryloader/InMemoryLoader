@@ -29,12 +29,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="log4net">
-      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoaderBase.0.0.9\lib\InMemoryLoaderBase.dll</HintPath>
+      <HintPath>..\..\responsive-kaysta-master\packages\InMemoryLoaderBase.0.1.2\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
+    <Reference Include="InMemoryLoader">
+      <HintPath>..\..\responsive-kaysta-master\packages\InMemoryLoader.0.1.2\lib\InMemoryLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\responsive-kaysta-master\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -48,11 +52,5 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\InMemoryLoader\InMemoryLoader.csproj">
-      <Project>{03EBE292-5758-4919-A3A9-AAA31313FC1F}</Project>
-      <Name>InMemoryLoader</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>

@@ -33,7 +33,8 @@
       <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.1.1\lib\InMemoryLoaderBase.dll</HintPath>
+      <HintPath>..\..\responsive-kaysta-master\packages\InMemoryLoaderBase.0.1.2\lib\InMemoryLoaderBase.dll</HintPath>
+      <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
