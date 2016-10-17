@@ -2,6 +2,7 @@
 using InMemoryLoader;
 using InMemoryLoaderBase;
 using log4net;
+using System.Configuration;
 
 namespace InMemoryLoaderTestConsole
 {
@@ -18,18 +19,12 @@ namespace InMemoryLoaderTestConsole
 		/// The app base.
 		/// </summary>
 		private static AppBase appBase = AppBase.Instance;
-
-
+        
 		/// <summary>
 		/// The test component path.
 		/// </summary>
-
-		// Linux Mono Environment
-		private const string testComponentPath = "C:\\Development\\InMemoryLoader\\InMemoryLoaderTestComponent\\bin\\Debug\\InMemoryLoaderTestComponent.dll";
-
-		// Windows Environment
-		// private const string testComponentPath = @"C:\Users\kayst\OneDrive\Development\github\InMemoryLoader\InMemoryLoaderTestComponent\bin\Debug\InMemoryLoaderTestComponent.dll";
-
+		private static string testComponentPath = ConfigurationManager.AppSettings["TestComponentBasePath"];
+        
 		/// <summary>
 		/// The entry point of the program, where the program control starts and ends.
 		/// </summary>
