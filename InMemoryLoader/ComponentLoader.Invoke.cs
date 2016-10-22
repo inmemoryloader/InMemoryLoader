@@ -1,13 +1,6 @@
-﻿using System;
+﻿using InMemoryLoaderBase;
+using System;
 using System.Reflection;
-using System.Collections;
-using System.Text;
-using System.Collections.Generic;
-using System.Resources;
-using System.Globalization;
-using System.Linq;
-using log4net;
-using InMemoryLoaderBase;
 
 namespace InMemoryLoader
 {
@@ -27,9 +20,9 @@ namespace InMemoryLoader
                 var result = ClassInfo.ClassType.InvokeMember(MethodName, BindingFlags.Default | BindingFlags.InvokeMethod, null, ClassInfo.ClassObject, paramArgs);
                 return (result);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -49,11 +42,10 @@ namespace InMemoryLoader
                 var result = (this.InvokeMethod(classInfo, MethodName, paramArgs));
                 return result;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
     }
 }
-

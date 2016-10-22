@@ -1,13 +1,7 @@
-﻿using System;
-using System.Reflection;
-using System.Collections;
-using System.Text;
+﻿using InMemoryLoaderBase;
+using System;
 using System.Collections.Generic;
-using System.Resources;
-using System.Globalization;
 using System.Linq;
-using log4net;
-using InMemoryLoaderBase;
 
 namespace InMemoryLoader
 {
@@ -67,11 +61,10 @@ namespace InMemoryLoader
                 var returnObject = this.InvokeMethod(ClassSetup.Assembly, ClassSetup.Class, ClassSetup.InitMethod, paramArgs);
                 return returnObject;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
     }
 }
-

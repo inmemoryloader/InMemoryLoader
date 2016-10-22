@@ -1,13 +1,7 @@
-﻿using System;
-using System.Reflection;
-using System.Collections;
-using System.Text;
-using System.Collections.Generic;
-using System.Resources;
-using System.Globalization;
+﻿using InMemoryLoaderBase;
+using System;
 using System.Linq;
-using log4net;
-using InMemoryLoaderBase;
+using System.Reflection;
 
 namespace InMemoryLoader
 {
@@ -23,7 +17,6 @@ namespace InMemoryLoader
         {
             if (this.ClassReferences.ContainsKey(AssemblyName) == false)
             {
-
                 Assembly assembly;
 
                 if (this.AssemblyReferences.ContainsKey(AssemblyName) == false)
@@ -37,7 +30,6 @@ namespace InMemoryLoader
 
                 foreach (Type type in assembly.GetTypes())
                 {
-
                     if (type.IsClass == true)
                     {
 
@@ -57,12 +49,9 @@ namespace InMemoryLoader
                             throw (new System.Exception("Class is not typeof(AbstractPowerUpComponent)"));
                         }
                     }
-
                 }
-
                 throw (new System.Exception("Could not instantiate Class"));
             }
-
             return ((DynamicClassInfo)this.ClassReferences[AssemblyName]);
         }
 
@@ -86,4 +75,3 @@ namespace InMemoryLoader
         }
     }
 }
-

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Reflection;
-using System.Collections;
-using System.Text;
-using System.Collections.Generic;
-using System.Resources;
-using System.Globalization;
-using System.Linq;
+﻿using InMemoryLoaderBase;
 using log4net;
-using InMemoryLoaderBase;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace InMemoryLoader
 {
@@ -77,4 +72,3 @@ namespace InMemoryLoader
         }
     }
 }
-
