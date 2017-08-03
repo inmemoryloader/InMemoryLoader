@@ -1,5 +1,4 @@
-﻿
-//
+﻿//
 // ObjectHelper.cs
 //
 // Author: Kay Stuckenschmidt <mailto.kaysta@gmail.com>

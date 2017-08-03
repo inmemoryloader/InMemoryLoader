@@ -71,9 +71,6 @@
       <HintPath>..\..\MasterArchive\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.1.3.001\lib\net45\InMemoryLoaderBase.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,4 +86,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\InMemoryLoaderBase\InMemoryLoaderBase\InMemoryLoaderBase.csproj">
+      <Project>{55EC3AB9-DA4B-4888-8AA3-513F393FBFB1}</Project>
+      <Name>InMemoryLoaderBase</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
