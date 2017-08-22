@@ -57,21 +57,27 @@ namespace InMemoryLoader
 				{
 					if (type.IsClass == true)
 					{
-
-						if (type.IsSubclassOf(typeof(AbstractPowerUpComponent)))
+						// if (type.IsPublic && typeof(InMemoryLoaderBase.AbstractPowerUpComponent).IsAssignableFrom(type))
+						if (type.IsPublic)
 						{
-
-							if (type.FullName.EndsWith("." + ClassName))
+							if (type.FullName.EndsWith("." + ClassName, StringComparison.InvariantCultureIgnoreCase))
 							{
-
 								IDynamicClassInfo classInfo = new DynamicClassInfo(type, Activator.CreateInstance(type));
-								this.ClassReferences.Add(AssemblyName, classInfo);
-								return (classInfo);
+
+								if (typeof(InMemoryLoaderBase.AbstractPowerUpComponent).IsAssignableFrom(classInfo.ClassType))
+								{
+									this.ClassReferences.Add(AssemblyName, classInfo);
+									return (classInfo);
+								}
+								else
+								{
+									throw (new System.Exception("Class is not typeof(InMemoryLoaderBase.AbstractPowerUpComponent)"));
+								}
 							}
 						}
 						else
 						{
-							throw (new System.Exception("Class is not typeof(AbstractPowerUpComponent)"));
+							throw (new System.Exception("Class is not Public"));
 						}
 					}
 				}
