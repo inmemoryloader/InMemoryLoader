@@ -52,6 +52,6 @@ namespace InMemoryLoader
 			var value = paramObject.GetType ().GetProperty (propertyName).GetValue (paramObject);
 			return value;
 		}
-	}
-}
 
+    }
+}

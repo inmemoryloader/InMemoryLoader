@@ -55,6 +55,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <None Include="Documentation\ClassDiagram.cd" />
     <None Include="InMemoryLoader.snk" />
     <None Include="packages.config" />
   </ItemGroup>
