@@ -41,7 +41,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.2.9.0\lib\InMemoryLoaderBase.dll</HintPath>
+      <HintPath>..\..\InMemoryLoaderMaster\packages\InMemoryLoaderBase.0.2.9.1\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
