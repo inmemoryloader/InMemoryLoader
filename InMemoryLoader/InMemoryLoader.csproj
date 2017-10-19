@@ -52,6 +52,7 @@
     <Compile Include="ComponentLoader.Invoke.cs" />
     <Compile Include="ComponentLoader.Helper.cs" />
     <Compile Include="Helper\ObjectHelper.cs" />
+    <Compile Include="AbstractLoaderBase.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
