@@ -58,6 +58,7 @@
     <None Include="Documentation\ClassDiagram.cd" />
     <None Include="InMemoryLoader.snk" />
     <None Include="packages.config" />
+    <None Include="ChangeLog.txt" />
   </ItemGroup>
   <ItemGroup />
 </Project>
