@@ -25,7 +25,6 @@
 
 using System;
 using System.Globalization;
-using System.Linq;
 using System.Threading;
 using InMemoryLoaderBase;
 using log4net;
@@ -34,19 +33,41 @@ namespace InMemoryLoader
 {
 	public abstract class AbstractLoaderBase
 	{
-
+		/// <summary>
+		/// The log.
+		/// </summary>
 		private static readonly ILog log = LogManager.GetLogger(typeof(AbstractLoaderBase));
 
+		/// <summary>
+		/// The application key.
+		/// </summary>
 		public string ApplicationKey = AbstractPowerUpComponent.Key;
 
+		/// <summary>
+		/// Gets or sets the assembly path.
+		/// </summary>
+		/// <value>The assembly path.</value>
 		public string AssemblyPath { get; set; }
-
+		/// <summary>
+		/// Gets or sets the console culture.
+		/// </summary>
+		/// <value>The console culture.</value>
 		public string ConsoleCulture { get; set; }
-
+		/// <summary>
+		/// Gets or sets the component loader.
+		/// </summary>
+		/// <value>The component loader.</value>
 		public ComponentLoader ComponentLoader { get; set; }
 
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:InMemoryLoader.AbstractLoaderBase"/> class.
+		/// </summary>
 		public AbstractLoaderBase() { }
 
+		/// <summary>
+		/// Gets the assembly path.
+		/// </summary>
+		/// <returns>The assembly path.</returns>
 		public virtual string GetAssemblyPath()
 		{
 			var compPath = string.Empty;
@@ -55,6 +76,10 @@ namespace InMemoryLoader
 			return compPath;
 		}
 
+		/// <summary>
+		/// Sets the in memory loader.
+		/// </summary>
+		/// <returns><c>true</c>, if in memory loader was set, <c>false</c> otherwise.</returns>
 		public virtual bool SetInMemoryLoader()
 		{
 			bool isSet = false;
@@ -65,6 +90,10 @@ namespace InMemoryLoader
 			return isSet;
 		}
 
+		/// <summary>
+		/// Sets the class registry.
+		/// </summary>
+		/// <returns><c>true</c>, if class registry was set, <c>false</c> otherwise.</returns>
 		public virtual bool SetClassRegistry()
 		{
 			bool isSet = false;
@@ -74,6 +103,10 @@ namespace InMemoryLoader
 			return isSet;
 		}
 
+		/// <summary>
+		/// Sets the culture.
+		/// </summary>
+		/// <returns><c>true</c>, if culture was set, <c>false</c> otherwise.</returns>
 		public virtual bool SetCulture()
 		{
 			var specificCulture = CultureInfo.CreateSpecificCulture(this.ConsoleCulture);
