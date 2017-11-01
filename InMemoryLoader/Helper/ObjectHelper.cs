@@ -27,6 +27,9 @@ using System;
 
 namespace InMemoryLoader
 {
+    /// <summary>
+    /// ObjectHelper
+    /// </summary>
 	public class ObjectHelper
 	{
 		/// <summary>

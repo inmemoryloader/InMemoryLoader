@@ -22,6 +22,7 @@
     <ErrorReport>prompt</ErrorReport>
     <DocumentationFile>..\..\..\Deployment\InMemoryLoader\XmlDocumentation\InMemoryLoader.xml</DocumentationFile>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>

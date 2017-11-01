@@ -31,6 +31,9 @@ using log4net;
 
 namespace InMemoryLoader
 {
+    /// <summary>
+    /// AbstractLoaderBase
+    /// </summary>
 	public abstract class AbstractLoaderBase
 	{
 		/// <summary>
