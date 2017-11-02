@@ -8,7 +8,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="InMemoryLoader.ObjectHelper">
-    <Position X="3.5" Y="0.5" Width="1.75" />
+    <Position X="3.75" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAABAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Helper\ObjectHelper.cs</FileName>

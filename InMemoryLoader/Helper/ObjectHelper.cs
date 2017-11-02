@@ -27,6 +27,9 @@ using System;
 
 namespace InMemoryLoader
 {
+    /// <summary>
+    /// ObjectHelper
+    /// </summary>
 	public class ObjectHelper
 	{
 		/// <summary>
@@ -52,6 +55,6 @@ namespace InMemoryLoader
 			var value = paramObject.GetType ().GetProperty (propertyName).GetValue (paramObject);
 			return value;
 		}
-	}
-}
 
+    }
+}

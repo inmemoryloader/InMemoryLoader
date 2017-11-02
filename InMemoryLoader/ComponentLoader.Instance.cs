@@ -40,22 +40,27 @@ namespace InMemoryLoader
 		/// The log.
 		/// </summary>
 		private static ILog log = LogManager.GetLogger(typeof(ComponentLoader));
+
 		/// <summary>
 		/// The instance.
 		/// </summary>
 		private static volatile ComponentLoader instance;
+
 		/// <summary>
 		/// The sync root.
 		/// </summary>
 		private static object syncRoot = new Object();
+
 		/// <summary>
 		/// The assembly references.
 		/// </summary>
 		internal Hashtable AssemblyReferences = new Hashtable();
+
 		/// <summary>
 		/// The class references.
 		/// </summary>
 		internal IDictionary<string, IDynamicClassInfo> ClassReferences;
+
 		/// <summary>
 		/// The component registry.
 		/// </summary>
