@@ -60,6 +60,7 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="Documentation\InMemoryLoader.cd" />
+    <None Include="Documentation\InMemoryLoader.pdf" />
     <None Include="InMemoryLoader.snk" />
     <None Include="packages.config" />
   </ItemGroup>
