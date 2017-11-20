@@ -82,16 +82,8 @@ namespace InMemoryLoader
 		/// <param name="paramClassName">Parameter class name.</param>
 		public IDynamicClassInfo GetClassReference(string paramClassName)
 		{
-			var value = this.ClassReferences.Where(cls => cls.Value.ClassType.Name.Contains(paramClassName)).FirstOrDefault();
-
-			if (!string.IsNullOrEmpty(value.Key))
-			{
-				return value.Value;
-			}
-			else
-			{
-				return null;
-			}
+			var value = this.ClassReferences.FirstOrDefault(cls => cls.Value.ClassType.Name.Contains(paramClassName));
+			return !string.IsNullOrEmpty(value.Key) ? value.Value : null;
 		}
 	}
 }
