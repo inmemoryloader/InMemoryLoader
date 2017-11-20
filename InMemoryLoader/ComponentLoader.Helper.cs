@@ -39,16 +39,8 @@ namespace InMemoryLoader
 		/// <param name="paramClassName">Parameter class name.</param>
 		public bool ClassExists(string paramClassName)
 		{
-			var value = this.ClassReferences.Where(cls => cls.Value.ClassType.Name.Contains(paramClassName)).FirstOrDefault();
-
-			if (string.IsNullOrEmpty(value.Key))
-			{
-				return false;
-			}
-			else
-			{
-				return true;
-			}
+			var value = this.ClassReferences.FirstOrDefault(cls => cls.Value.ClassType.Name.Contains(paramClassName));
+            return !string.IsNullOrEmpty(value.Key);
 		}
 	}
 }

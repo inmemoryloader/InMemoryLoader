@@ -32,34 +32,38 @@ namespace InMemoryLoaderNunit
     /// <summary>
     /// In memory loader nunit.
     /// </summary>
-	[TestFixture ()]
-	public class InMemoryLoaderNunit
-	{
-		/// <summary>
+    [TestFixture()]
+    public class InMemoryLoaderNunit
+    {
+        /// <summary>
         /// Gets the console culture.
         /// </summary>
         /// <value>The console culture.</value>
-		internal string ConsoleCulture { get { return ConfigurationManager.AppSettings["ConsoleCulture"].ToString(); } }
+        internal string ConsoleCulture { get { return ConfigurationManager.AppSettings["ConsoleCulture"].ToString(); } }
 
         /// <summary>
         /// Gets the application key.
         /// </summary>
         /// <value>The application key.</value>
-		internal string ApplicationKey { get { return ConfigurationManager.AppSettings["ApplicationKey"].ToString(); } }
+        internal string ApplicationKey { get { return ConfigurationManager.AppSettings["ApplicationKey"].ToString(); } }
 
         /// <summary>
         /// Tests the abstract loader base.
         /// </summary>
-		[Test ()]
-        public void TestCase_AbstractLoaderBase ()
-		{
-			var path = AppDomain.CurrentDomain.BaseDirectory;
-            var testHelper = new TestHelper (this.ConsoleCulture, path);
+        [Test()]
+        public void TestCase_AbstractLoaderBase()
+        {
+            var path = AppDomain.CurrentDomain.BaseDirectory;
 
+            var testHelper = new TestHelper(this.ConsoleCulture, path);
 
+            Assert.IsTrue(testHelper.IsAssemblyPathSet());
+            Assert.IsTrue(testHelper.IsCultureSet());
+            Assert.IsTrue(testHelper.IsInMemoryLoaderSet());
+            Assert.IsTrue(testHelper.IsRegistrySet());
+            Assert.IsTrue(testHelper.ClassExists());
 
-
-		}
-	}
+        }
+    }
 }
 

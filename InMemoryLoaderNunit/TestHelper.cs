@@ -28,22 +28,67 @@ using InMemoryLoader;
 
 namespace InMemoryLoaderNunit
 {
-	/// <summary>
-	/// Test helper.
-	/// </summary>
-	internal class TestHelper : AbstractLoaderBase
-	{
+    /// <summary>
+    /// Test helper.
+    /// </summary>
+    internal class TestHelper : AbstractLoaderBase
+    {
         /// <summary>
         /// Initializes a new instance of the <see cref="InMemoryLoaderNunit.TestHelper"/> class.
         /// </summary>
-        internal TestHelper (string culture, string path)
-		{
+        internal TestHelper(string culture, string path)
+        {
             base.ConsoleCulture = culture;
             base.AssemblyPath = path;
-		}
+        }
 
+        /// <summary>
+        /// Determines whether this instance is assembly path set.
+        /// </summary>
+        /// <returns><c>true</c> if this instance is assembly path set; otherwise, <c>false</c>.</returns>
+        internal bool IsAssemblyPathSet()
+        {
+            var path = base.GetAssemblyPath();
+            bool isSet = false || !string.IsNullOrEmpty(path);
+            return isSet;
+        }
 
+        /// <summary>
+        /// Determines whether this instance is culture set.
+        /// </summary>
+        /// <returns><c>true</c> if this instance is culture set; otherwise, <c>false</c>.</returns>
+        internal bool IsCultureSet()
+        {
+            return base.SetCulture();
+        }
 
-	}
+        /// <summary>
+        /// Determines whether this instance is in memory loader set.
+        /// </summary>
+        /// <returns><c>true</c> if this instance is in memory loader set; otherwise, <c>false</c>.</returns>
+        internal bool IsInMemoryLoaderSet()
+        {
+            return base.SetInMemoryLoader();
+        }
+
+        /// <summary>
+        /// Determines whether this instance is registry set.
+        /// </summary>
+        /// <returns><c>true</c> if this instance is registry set; otherwise, <c>false</c>.</returns>
+        internal bool IsRegistrySet()
+        {
+            return base.SetClassRegistry();
+        }
+
+        /// <summary>
+        /// Class exists.
+        /// </summary>
+        /// <returns><c>true</c>, if exists was classed, <c>false</c> otherwise.</returns>
+        internal bool ClassExists()
+        {
+            return base.ComponentLoader.ClassExists("InMemoryLoaderBase");
+        }
+
+    }
 
 }
