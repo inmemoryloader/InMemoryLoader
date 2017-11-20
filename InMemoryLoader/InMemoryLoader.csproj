@@ -9,7 +9,7 @@
     <AssemblyName>InMemoryLoader</AssemblyName>
     <Description>Pre Release Build</Description>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ReleaseVersion>0.3.1.0</ReleaseVersion>
+    <ReleaseVersion>0.3.2</ReleaseVersion>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
@@ -20,6 +20,7 @@
     <OutputPath>bin\Debug</OutputPath>
     <WarningLevel>4</WarningLevel>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <DocumentationFile>..\..\Deployment\InMemoryLoader\XmlDocumentation\InMemoryLoader.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>false</Optimize>

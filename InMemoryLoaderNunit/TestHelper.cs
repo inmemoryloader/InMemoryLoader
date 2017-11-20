@@ -31,15 +31,17 @@ namespace InMemoryLoaderNunit
 	/// <summary>
 	/// Test helper.
 	/// </summary>
-	public class TestHelper : AbstractLoaderBase
+	internal class TestHelper : AbstractLoaderBase
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="InMemoryLoaderNunit.TestHelper"/> class.
-		/// </summary>
-		public TestHelper ()
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InMemoryLoaderNunit.TestHelper"/> class.
+        /// </summary>
+        internal TestHelper ()
 		{
 			
 		}
+
+
 
 	}
 

@@ -29,18 +29,29 @@ using System.Configuration;
 
 namespace InMemoryLoaderNunit
 {
+    /// <summary>
+    /// In memory loader nunit.
+    /// </summary>
 	[TestFixture ()]
 	public class InMemoryLoaderNunit
 	{
-		
+		/// <summary>
+        /// Gets the console culture.
+        /// </summary>
+        /// <value>The console culture.</value>
 		internal string ConsoleCulture { get { return ConfigurationManager.AppSettings["ConsoleCulture"].ToString(); } }
 
-
+        /// <summary>
+        /// Gets the application key.
+        /// </summary>
+        /// <value>The application key.</value>
 		internal string ApplicationKey { get { return ConfigurationManager.AppSettings["ApplicationKey"].ToString(); } }
 
-
+        /// <summary>
+        /// Tests the abstract loader base.
+        /// </summary>
 		[Test ()]
-		public void AbstractLoaderBaseTestCase ()
+        public void TestCase_AbstractLoaderBase ()
 		{
 			var path = AppDomain.CurrentDomain.BaseDirectory;
 			var testHelper = new TestHelper ();
