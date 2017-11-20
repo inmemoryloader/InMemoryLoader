@@ -54,13 +54,8 @@ namespace InMemoryLoaderNunit
         public void TestCase_AbstractLoaderBase ()
 		{
 			var path = AppDomain.CurrentDomain.BaseDirectory;
-			var testHelper = new TestHelper ();
+            var testHelper = new TestHelper (this.ConsoleCulture, path);
 
-			testHelper.ConsoleCulture = this.ConsoleCulture;
-			testHelper.AssemblyPath = path;
-
-			bool cultureSet = testHelper.SetCulture();
-			Assert.IsTrue (cultureSet);
 
 
 

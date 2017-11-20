@@ -36,9 +36,10 @@ namespace InMemoryLoaderNunit
         /// <summary>
         /// Initializes a new instance of the <see cref="InMemoryLoaderNunit.TestHelper"/> class.
         /// </summary>
-        internal TestHelper ()
+        internal TestHelper (string culture, string path)
 		{
-			
+            base.ConsoleCulture = culture;
+            base.AssemblyPath = path;
 		}
 
 
