@@ -7,7 +7,8 @@
     <OutputType>Library</OutputType>
     <RootNamespace>InMemoryLoader</RootNamespace>
     <AssemblyName>InMemoryLoader</AssemblyName>
-    <Description>Pre Release Build</Description>
+    <Description>InMemoryLoader ist eine in C# geschriebene Funktionsbibliothek welche 
+das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <ReleaseVersion>0.3.2</ReleaseVersion>
     <SignAssembly>true</SignAssembly>
@@ -30,11 +31,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoaderBase.0.3.1.4\lib\InMemoryLoaderBase.dll</HintPath>
-    </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="InMemoryLoaderBase">
+      <HintPath>..\packages\InMemoryLoaderBase.0.3.2.2\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

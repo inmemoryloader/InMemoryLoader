@@ -80,15 +80,6 @@ namespace InMemoryLoaderNunit
             return base.SetClassRegistry();
         }
 
-        /// <summary>
-        /// Class exists.
-        /// </summary>
-        /// <returns><c>true</c>, if exists was classed, <c>false</c> otherwise.</returns>
-        internal bool ClassExists()
-        {
-            return base.ComponentLoader.ClassExists("InMemoryLoaderBase");
-        }
-
     }
 
 }

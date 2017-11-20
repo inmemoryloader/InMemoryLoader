@@ -61,7 +61,6 @@ namespace InMemoryLoaderNunit
             Assert.IsTrue(testHelper.IsCultureSet());
             Assert.IsTrue(testHelper.IsInMemoryLoaderSet());
             Assert.IsTrue(testHelper.IsRegistrySet());
-            Assert.IsTrue(testHelper.ClassExists());
 
         }
 
