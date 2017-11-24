@@ -1,4 +1,4 @@
-*.nupkg
+# *.nupkg
 # packages/
 # bin/
 obj/
@@ -64,13 +64,13 @@ publish/
 *.pubxml
 *.publishproj
 
-
 # The packages folder can be ignored because of Package Restore
-**/packages/*
+# **/packages/*
 # except build/, which is used as an MSBuild target.
-!**/packages/build/
+# !**/packages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
-#!**/packages/repositories.config
+# !**/packages/repositories.config
+
 InMemoryLoader/bin/Debug/InMemoryLoader.xml
 InMemoryLoader/bin/Debug/InMemoryLoader.dll
 InMemoryLoader/bin/Debug/log4net.xml
