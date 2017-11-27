@@ -1,0 +1,3 @@
+[submodule "InMemoryLoaderBase"]
+	path = InMemoryLoaderBase
+	url = https://github.com/responsive-kaysta/InMemoryLoaderBase.git
