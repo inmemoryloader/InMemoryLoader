@@ -21,7 +21,7 @@ das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
     <OutputPath>bin\Debug</OutputPath>
     <WarningLevel>4</WarningLevel>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-    <DocumentationFile>..\..\..\XmlDocumentation\InMemoryLoader.xml</DocumentationFile>
+    <DocumentationFile>..\..\XmlDocumentation\InMemoryLoader.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>false</Optimize>
