@@ -63,8 +63,8 @@ namespace InMemoryLoader
 		{
 			try
 			{
-				var classInfo = this.GetClassReference(AssemblyName, ClassName);
-				var result = (this.InvokeMethod(classInfo, MethodName, paramArgs));
+				var classInfo = GetClassReference(AssemblyName, ClassName);
+				var result = (InvokeMethod(classInfo, MethodName, paramArgs));
 				return result;
 			}
 			catch (Exception)

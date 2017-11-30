@@ -34,8 +34,10 @@ namespace InMemoryLoaderNunit
     internal class TestHelper : AbstractLoaderBase
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InMemoryLoaderNunit.TestHelper"/> class.
+        /// Initializes a new instance of the <see cref="TestHelper"/> class.
         /// </summary>
+        /// <param name="culture">Culture.</param>
+        /// <param name="path">Path.</param>
         internal TestHelper(string culture, string path)
         {
             base.ConsoleCulture = culture;

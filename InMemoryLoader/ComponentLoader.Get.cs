@@ -40,17 +40,17 @@ namespace InMemoryLoader
 		/// <param name="ClassName">Class name.</param>
 		public IDynamicClassInfo GetClassReference(string AssemblyName, string ClassName)
 		{
-			if (this.ClassReferences.ContainsKey(AssemblyName) == false)
+			if (ClassReferences.ContainsKey(AssemblyName) == false)
 			{
 				Assembly assembly;
 
-				if (this.AssemblyReferences.ContainsKey(AssemblyName) == false)
+				if (AssemblyReferences.ContainsKey(AssemblyName) == false)
 				{
-					this.AssemblyReferences.Add(AssemblyName, assembly = Assembly.LoadFrom(AssemblyName));
+					AssemblyReferences.Add(AssemblyName, assembly = Assembly.LoadFrom(AssemblyName));
 				}
 				else
 				{
-					assembly = (Assembly)this.AssemblyReferences[AssemblyName];
+					assembly = (Assembly)AssemblyReferences[AssemblyName];
 				}
 
 				foreach (Type type in assembly.GetTypes())
@@ -61,7 +61,7 @@ namespace InMemoryLoader
 
 						if (typeof(InMemoryLoaderBase.AbstractPowerUpComponent).IsAssignableFrom(classInfo.ClassType))
 						{
-							this.ClassReferences.Add(AssemblyName, classInfo);
+							ClassReferences.Add(AssemblyName, classInfo);
 							return (classInfo);
 						}
 						else
@@ -72,7 +72,7 @@ namespace InMemoryLoader
 				}
 				throw (new System.Exception("Could not instantiate Class"));
 			}
-			return ((DynamicClassInfo)this.ClassReferences[AssemblyName]);
+			return ((DynamicClassInfo)ClassReferences[AssemblyName]);
 		}
 
 		/// <summary>
@@ -82,7 +82,7 @@ namespace InMemoryLoader
 		/// <param name="paramClassName">Parameter class name.</param>
 		public IDynamicClassInfo GetClassReference(string paramClassName)
 		{
-			var value = this.ClassReferences.FirstOrDefault(cls => cls.Value.ClassType.Name.Contains(paramClassName));
+			var value = ClassReferences.FirstOrDefault(cls => cls.Value.ClassType.Name.Contains(paramClassName));
 			return !string.IsNullOrEmpty(value.Key) ? value.Value : null;
 		}
 	}
