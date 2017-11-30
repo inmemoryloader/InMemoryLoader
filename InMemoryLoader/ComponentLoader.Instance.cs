@@ -71,9 +71,9 @@ namespace InMemoryLoader
 		/// </summary>
 		private ComponentLoader()
 		{
-            if (this.ClassReferences == null)
+            if (ClassReferences == null)
 			{
-                this.ClassReferences = new Dictionary<string, IDynamicClassInfo>();
+                ClassReferences = new Dictionary<string, IDynamicClassInfo>();
 			}
 		}
 

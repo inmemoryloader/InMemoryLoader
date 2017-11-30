@@ -75,7 +75,7 @@ namespace InMemoryLoader
 		{
 			var compPath = string.Empty;
 			compPath = AppDomain.CurrentDomain.BaseDirectory;
-			log.DebugFormat("AssemblyPath set to: {0}", this.AssemblyPath);
+			log.DebugFormat("AssemblyPath set to: {0}", AssemblyPath);
 			return compPath;
 		}
 
@@ -86,8 +86,8 @@ namespace InMemoryLoader
 		public virtual bool SetInMemoryLoader()
 		{
 			bool isSet = false;
-			this.GetAssemblyPath();
-			this.ComponentLoader = ComponentLoader.Instance;
+			GetAssemblyPath();
+			ComponentLoader = ComponentLoader.Instance;
 			isSet = true;
 			log.DebugFormat("InMemoryLoader set: {0}", isSet);
 			return isSet;
@@ -100,7 +100,7 @@ namespace InMemoryLoader
 		public virtual bool SetClassRegistry()
 		{
 			bool isSet = false;
-			this.ComponentLoader.InitClassRegistry();
+			ComponentLoader.InitClassRegistry();
 			isSet = true;
 			log.DebugFormat("ClassRegistry set: {0}", isSet);
 			return isSet;
@@ -112,11 +112,11 @@ namespace InMemoryLoader
 		/// <returns><c>true</c>, if culture was set, <c>false</c> otherwise.</returns>
 		public virtual bool SetCulture()
 		{
-			var specificCulture = CultureInfo.CreateSpecificCulture(this.ConsoleCulture);
-			var uiCulture = new CultureInfo(this.ConsoleCulture);
+			var specificCulture = CultureInfo.CreateSpecificCulture(ConsoleCulture);
+			var uiCulture = new CultureInfo(ConsoleCulture);
 			Thread.CurrentThread.CurrentCulture = specificCulture;
 			Thread.CurrentThread.CurrentUICulture = uiCulture;
-			log.DebugFormat("CurrentCulture set to: {0}", this.ConsoleCulture);
+			log.DebugFormat("CurrentCulture set to: {0}", ConsoleCulture);
 			return true;
 		}
 

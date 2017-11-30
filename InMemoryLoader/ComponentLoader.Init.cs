@@ -38,23 +38,23 @@ namespace InMemoryLoader
 		/// <returns><c>true</c>, if class registry was inited, <c>false</c> otherwise.</returns>
 		public bool InitClassRegistry()
 		{
-            if (this.ComponentRegistry == null)
+            if (ComponentRegistry == null)
 			{
-                this.ComponentRegistry = new Dictionary<IDynamicClassSetup, IDynamicClassInfo>();
+                ComponentRegistry = new Dictionary<IDynamicClassSetup, IDynamicClassInfo>();
 			}
 
-			foreach (var item in this.ClassReferences)
+			foreach (var item in ClassReferences)
 			{
 
 				var dynclass = new DynamicClassSetup();
 				dynclass.Assembly = item.Key;
 				dynclass.Class = item.Value.ClassType.Name;
 
-				var type = this.GetClassReference(dynclass.Class);
+				var type = GetClassReference(dynclass.Class);
 
-                if (!this.ComponentRegistry.Keys.Any(ky => ky.Assembly.Contains(dynclass.Assembly)))
+                if (!ComponentRegistry.Keys.Any(ky => ky.Assembly.Contains(dynclass.Assembly)))
                 {
-                    this.ComponentRegistry.Add(dynclass, type);
+                    ComponentRegistry.Add(dynclass, type);
                     if (log.IsDebugEnabled)
                     {
                         log.DebugFormat("Add AssemblyName: {0}, ClassType.FullName: {1} to ComponentRegistry", dynclass.Assembly, dynclass.Class);
@@ -64,7 +64,7 @@ namespace InMemoryLoader
 
 			if (log.IsDebugEnabled)
 			{
-                foreach (var item in this.ComponentRegistry)
+                foreach (var item in ComponentRegistry)
 				{
 					log.InfoFormat("ComponentRegistry contains AssemblyName: {0}, ClassType.FullName: {1}", item.Key.Assembly, item.Key.Class);
 				}
@@ -83,7 +83,7 @@ namespace InMemoryLoader
 		{
 			try
 			{
-				var returnObject = this.InvokeMethod(ClassSetup.Assembly, ClassSetup.Class, ClassSetup.InitMethod, paramArgs);
+				var returnObject = InvokeMethod(ClassSetup.Assembly, ClassSetup.Class, ClassSetup.InitMethod, paramArgs);
 				return returnObject;
 			}
 			catch (Exception)
