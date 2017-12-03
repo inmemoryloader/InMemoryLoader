@@ -39,7 +39,7 @@ namespace InMemoryLoader
 		/// <summary>
 		/// The log.
 		/// </summary>
-		private static ILog log = LogManager.GetLogger(typeof(ComponentLoader));
+		private readonly static ILog log = LogManager.GetLogger(typeof(ComponentLoader));
 
 		/// <summary>
 		/// The instance.
@@ -49,12 +49,12 @@ namespace InMemoryLoader
 		/// <summary>
 		/// The sync root.
 		/// </summary>
-		private static object syncRoot = new Object();
+        private readonly static object syncRoot = new Object();
 
 		/// <summary>
 		/// The assembly references.
 		/// </summary>
-		internal Hashtable AssemblyReferences = new Hashtable();
+        internal readonly Hashtable AssemblyReferences = new Hashtable();
 
 		/// <summary>
 		/// The class references.
