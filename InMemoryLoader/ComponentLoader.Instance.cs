@@ -92,7 +92,7 @@ namespace InMemoryLoader
                         if (_instance == null)
 						{
                             _instance = new ComponentLoader();
-                            log.DebugFormat("Create a new instance of Type: {0}", _instance.GetType().ToString());
+                            log.DebugFormat("Create a new instance of Type: {0}", _instance.GetType());
 						}
 					}
 				}
