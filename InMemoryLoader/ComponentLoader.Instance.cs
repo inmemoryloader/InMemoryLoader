@@ -39,7 +39,7 @@ namespace InMemoryLoader
 		/// <summary>
 		/// The log.
 		/// </summary>
-		private readonly static ILog log = LogManager.GetLogger(typeof(ComponentLoader));
+		private readonly static ILog Log = LogManager.GetLogger(typeof(ComponentLoader));
 
 		/// <summary>
 		/// The instance.
@@ -49,7 +49,7 @@ namespace InMemoryLoader
 		/// <summary>
 		/// The sync root.
 		/// </summary>
-        private readonly static object syncRoot = new Object();
+        private readonly static object SyncRoot = new Object();
 
 		/// <summary>
 		/// The assembly references.
@@ -87,12 +87,12 @@ namespace InMemoryLoader
 			{
                 if (_instance == null)
 				{
-					lock (syncRoot)
+					lock (SyncRoot)
 					{
                         if (_instance == null)
 						{
                             _instance = new ComponentLoader();
-                            log.DebugFormat("Create a new instance of Type: {0}", _instance.GetType());
+                            Log.DebugFormat("Create a new instance of Type: {0}", _instance.GetType());
 						}
 					}
 				}
