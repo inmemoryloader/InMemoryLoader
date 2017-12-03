@@ -39,27 +39,27 @@ namespace InMemoryLoader
 		/// <summary>
 		/// The log.
 		/// </summary>
-		private readonly static ILog Log = LogManager.GetLogger(typeof(ComponentLoader));
+		readonly static ILog Log = LogManager.GetLogger(typeof(ComponentLoader));
 
 		/// <summary>
 		/// The instance.
 		/// </summary>
-		private static volatile ComponentLoader _instance;
+		static volatile ComponentLoader _instance;
 
 		/// <summary>
 		/// The sync root.
 		/// </summary>
-        private readonly static object SyncRoot = new Object();
+        readonly static object SyncRoot = new Object();
 
 		/// <summary>
 		/// The assembly references.
 		/// </summary>
-        internal readonly Hashtable AssemblyReferences = new Hashtable();
+        readonly Hashtable AssemblyReferences = new Hashtable();
 
 		/// <summary>
 		/// The class references.
 		/// </summary>
-		internal IDictionary<string, IDynamicClassInfo> ClassReferences;
+		IDictionary<string, IDynamicClassInfo> ClassReferences;
 
 		/// <summary>
 		/// The component registry.

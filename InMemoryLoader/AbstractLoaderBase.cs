@@ -65,7 +65,7 @@ namespace InMemoryLoader
 		/// <summary>
 		/// Initializes a new instance of the <see cref="T:InMemoryLoader.AbstractLoaderBase"/> class.
 		/// </summary>
-		public AbstractLoaderBase() { }
+		protected AbstractLoaderBase() { }
 
 		/// <summary>
 		/// Gets the assembly path.

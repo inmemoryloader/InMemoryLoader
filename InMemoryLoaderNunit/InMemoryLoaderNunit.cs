@@ -39,13 +39,13 @@ namespace InMemoryLoaderNunit
         /// Gets the console culture.
         /// </summary>
         /// <value>The console culture.</value>
-        internal string ConsoleCulture { get { return ConfigurationManager.AppSettings["ConsoleCulture"]; } }
+        string ConsoleCulture { get { return ConfigurationManager.AppSettings["ConsoleCulture"]; } }
 
         /// <summary>
         /// Gets the application key.
         /// </summary>
         /// <value>The application key.</value>
-        internal string ApplicationKey { get { return ConfigurationManager.AppSettings["ApplicationKey"]; } }
+        string ApplicationKey { get { return ConfigurationManager.AppSettings["ApplicationKey"]; } }
 
         /// <summary>
         /// Tests the abstract loader base.
