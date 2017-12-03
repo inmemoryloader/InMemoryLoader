@@ -39,7 +39,7 @@ namespace InMemoryLoader
 		/// <summary>
 		/// The log.
 		/// </summary>
-		private static readonly ILog Log = LogManager.GetLogger(typeof(AbstractLoaderBase));
+		static readonly ILog Log = LogManager.GetLogger(typeof(AbstractLoaderBase));
 
 		/// <summary>
 		/// The application key.
