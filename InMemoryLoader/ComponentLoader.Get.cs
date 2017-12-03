@@ -40,6 +40,11 @@ namespace InMemoryLoader
         /// <param name="className">Class name.</param>
 		public IDynamicClassInfo GetClassReference(string assemblyName, string className)
         {
+            if (string.IsNullOrEmpty(assemblyName) || string.IsNullOrEmpty(className))
+            {
+                throw new ArgumentNullException();
+            }
+
             if (ClassReferences.ContainsKey(assemblyName) == false)
             {
                 Assembly assembly;
