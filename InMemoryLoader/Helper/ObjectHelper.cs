@@ -25,35 +25,43 @@
 
 using System;
 
-namespace InMemoryLoader
+namespace InMemoryLoader.Helper
 {
     /// <summary>
     /// Object helper.
     /// </summary>
 	public static class ObjectHelper
-	{
+    {
         /// <summary>
         /// Gets the field value.
         /// </summary>
         /// <returns>The field value.</returns>
         /// <param name="fieldName">Field name.</param>
         /// <param name="paramObject">Parameter object.</param>
-		public static object GetFieldValue (string fieldName, object paramObject)
-		{
-			var value = paramObject.GetType ().GetField (fieldName).GetValue (paramObject);
-			return value;
-		}
+		public static object GetFieldValue(string fieldName, object paramObject)
+        {
+            if (string.IsNullOrEmpty(fieldName) || paramObject == null)
+            {
+                throw new ArgumentNullException();
+            }
+            var value = paramObject.GetType().GetField(fieldName).GetValue(paramObject);
+            return value;
+        }
         /// <summary>
         /// Gets the property value.
         /// </summary>
         /// <returns>The property value.</returns>
         /// <param name="propertyName">Property name.</param>
         /// <param name="paramObject">Parameter object.</param>
-		public static object GetPropertyValue (string propertyName, object paramObject)
-		{
-			var value = paramObject.GetType ().GetProperty (propertyName).GetValue (paramObject);
-			return value;
-		}
+		public static object GetPropertyValue(string propertyName, object paramObject)
+        {
+            if (string.IsNullOrEmpty(propertyName) || paramObject == null)
+            {
+                throw new ArgumentNullException();
+            }
+            var value = paramObject.GetType().GetProperty(propertyName).GetValue(paramObject);
+            return value;
+        }
 
     }
 }

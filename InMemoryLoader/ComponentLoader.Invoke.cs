@@ -31,18 +31,18 @@ namespace InMemoryLoader
 {
 	public partial class ComponentLoader
 	{
-		/// <summary>
-		/// Invokes the method.
-		/// </summary>
-		/// <returns>The method.</returns>
-		/// <param name="ClassInfo">Class info.</param>
-		/// <param name="MethodName">Method name.</param>
-		/// <param name="paramArgs">Parameter arguments.</param>
-		public dynamic InvokeMethod(IDynamicClassInfo ClassInfo, string MethodName, Object[] paramArgs)
+        /// <summary>
+        /// Invokes the method.
+        /// </summary>
+        /// <returns>The method.</returns>
+        /// <param name="classInfo">Class info.</param>
+        /// <param name="methodName">Method name.</param>
+        /// <param name="paramArgs">Parameter arguments.</param>
+		public dynamic InvokeMethod(IDynamicClassInfo classInfo, string methodName, Object[] paramArgs)
 		{
 			try
 			{
-				var result = ClassInfo.ClassType.InvokeMember(MethodName, BindingFlags.Default | BindingFlags.InvokeMethod, null, ClassInfo.ClassObject, paramArgs);
+                var result = classInfo.ClassType.InvokeMember(methodName, BindingFlags.Default | BindingFlags.InvokeMethod, null, classInfo.ClassObject, paramArgs);
 				return (result);
 			}
 			catch (Exception)
@@ -51,20 +51,20 @@ namespace InMemoryLoader
 			}
 		}
 
-		/// <summary>
-		/// Invokes the method.
-		/// </summary>
-		/// <returns>The method.</returns>
-		/// <param name="AssemblyName">Assembly name.</param>
-		/// <param name="ClassName">Class name.</param>
-		/// <param name="MethodName">Method name.</param>
-		/// <param name="paramArgs">Parameter arguments.</param>
-		public dynamic InvokeMethod(string AssemblyName, string ClassName, string MethodName, Object[] paramArgs)
+        /// <summary>
+        /// Invokes the method.
+        /// </summary>
+        /// <returns>The method.</returns>
+        /// <param name="assemblyName">Assembly name.</param>
+        /// <param name="className">Class name.</param>
+        /// <param name="methodName">Method name.</param>
+        /// <param name="paramArgs">Parameter arguments.</param>
+		public dynamic InvokeMethod(string assemblyName, string className, string methodName, Object[] paramArgs)
 		{
 			try
 			{
-				var classInfo = GetClassReference(AssemblyName, ClassName);
-				var result = (InvokeMethod(classInfo, MethodName, paramArgs));
+                var classInfo = GetClassReference(assemblyName, className);
+                var result = (InvokeMethod(classInfo, methodName, paramArgs));
 				return result;
 			}
 			catch (Exception)

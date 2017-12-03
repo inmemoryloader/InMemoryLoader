@@ -23,7 +23,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
 using InMemoryLoader;
 
 namespace InMemoryLoaderNunit
@@ -40,8 +39,8 @@ namespace InMemoryLoaderNunit
         /// <param name="path">Path.</param>
         internal TestHelper(string culture, string path)
         {
-            base.ConsoleCulture = culture;
-            base.AssemblyPath = path;
+            ConsoleCulture = culture;
+            AssemblyPath = path;
         }
 
         /// <summary>
@@ -50,7 +49,7 @@ namespace InMemoryLoaderNunit
         /// <returns><c>true</c> if this instance is assembly path set; otherwise, <c>false</c>.</returns>
         internal bool IsAssemblyPathSet()
         {
-            var path = base.GetAssemblyPath();
+            var path = GetAssemblyPath();
             bool isSet = false || !string.IsNullOrEmpty(path);
             return isSet;
         }
@@ -61,7 +60,7 @@ namespace InMemoryLoaderNunit
         /// <returns><c>true</c> if this instance is culture set; otherwise, <c>false</c>.</returns>
         internal bool IsCultureSet()
         {
-            return base.SetCulture();
+            return SetCulture();
         }
 
         /// <summary>
@@ -70,7 +69,7 @@ namespace InMemoryLoaderNunit
         /// <returns><c>true</c> if this instance is in memory loader set; otherwise, <c>false</c>.</returns>
         internal bool IsInMemoryLoaderSet()
         {
-            return base.SetInMemoryLoader();
+            return SetInMemoryLoader();
         }
 
         /// <summary>
@@ -79,7 +78,7 @@ namespace InMemoryLoaderNunit
         /// <returns><c>true</c> if this instance is registry set; otherwise, <c>false</c>.</returns>
         internal bool IsRegistrySet()
         {
-            return base.SetClassRegistry();
+            return SetClassRegistry();
         }
 
     }

@@ -35,91 +35,83 @@ namespace InMemoryLoader
     /// AbstractLoaderBase
     /// </summary>
 	public abstract class AbstractLoaderBase
-	{
-		/// <summary>
-		/// The log.
-		/// </summary>
-		private static readonly ILog log = LogManager.GetLogger(typeof(AbstractLoaderBase));
+    {
+        /// <summary>
+        /// The log.
+        /// </summary>
+        static readonly ILog Log = LogManager.GetLogger(typeof(AbstractLoaderBase));
 
-		/// <summary>
-		/// The application key.
-		/// </summary>
-		public string ApplicationKey = AbstractPowerUpComponent.Key;
+        /// <summary>
+        /// The application key.
+        /// </summary>
+        public string ApplicationKey = AbstractPowerUpComponent.Key;
 
-		/// <summary>
-		/// Gets or sets the assembly path.
-		/// </summary>
-		/// <value>The assembly path.</value>
-		public string AssemblyPath { get; set; }
-		/// <summary>
-		/// Gets or sets the console culture.
-		/// </summary>
-		/// <value>The console culture.</value>
-		public string ConsoleCulture { get; set; }
-		/// <summary>
-		/// Gets or sets the component loader.
-		/// </summary>
-		/// <value>The component loader.</value>
-		public ComponentLoader ComponentLoader { get; set; }
+        /// <summary>
+        /// Gets or sets the assembly path.
+        /// </summary>
+        /// <value>The assembly path.</value>
+        public string AssemblyPath { get; set; }
+        /// <summary>
+        /// Gets or sets the console culture.
+        /// </summary>
+        /// <value>The console culture.</value>
+        public string ConsoleCulture { get; set; }
+        /// <summary>
+        /// Gets or sets the component loader.
+        /// </summary>
+        /// <value>The component loader.</value>
+        public ComponentLoader ComponentLoader { get; set; }
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="T:InMemoryLoader.AbstractLoaderBase"/> class.
-		/// </summary>
-		public AbstractLoaderBase() { }
+        /// <summary>
+        /// Gets the assembly path.
+        /// </summary>
+        /// <returns>The assembly path.</returns>
+        public virtual string GetAssemblyPath()
+        {
+            var compPath = string.Empty;
+            compPath = AppDomain.CurrentDomain.BaseDirectory;
+            Log.DebugFormat("AssemblyPath set to: {0}", AssemblyPath);
+            return compPath;
+        }
 
-		/// <summary>
-		/// Gets the assembly path.
-		/// </summary>
-		/// <returns>The assembly path.</returns>
-		public virtual string GetAssemblyPath()
-		{
-			var compPath = string.Empty;
-			compPath = AppDomain.CurrentDomain.BaseDirectory;
-			log.DebugFormat("AssemblyPath set to: {0}", AssemblyPath);
-			return compPath;
-		}
+        /// <summary>
+        /// Sets the in memory loader.
+        /// </summary>
+        /// <returns><c>true</c>, if in memory loader was set, <c>false</c> otherwise.</returns>
+        public virtual bool SetInMemoryLoader()
+        {
+            GetAssemblyPath();
+            ComponentLoader = ComponentLoader.Instance;
+            bool isSet = ComponentLoader != null;
+            Log.DebugFormat("InMemoryLoader set: {0}", isSet);
+            return isSet;
+        }
 
-		/// <summary>
-		/// Sets the in memory loader.
-		/// </summary>
-		/// <returns><c>true</c>, if in memory loader was set, <c>false</c> otherwise.</returns>
-		public virtual bool SetInMemoryLoader()
-		{
-			bool isSet = false;
-			GetAssemblyPath();
-			ComponentLoader = ComponentLoader.Instance;
-			isSet = true;
-			log.DebugFormat("InMemoryLoader set: {0}", isSet);
-			return isSet;
-		}
+        /// <summary>
+        /// Sets the class registry.
+        /// </summary>
+        /// <returns><c>true</c>, if class registry was set, <c>false</c> otherwise.</returns>
+        public virtual bool SetClassRegistry()
+        {
+            bool isSet = ComponentLoader.InitClassRegistry();
+            Log.DebugFormat("ClassRegistry set: {0}", isSet);
+            return isSet;
+        }
 
-		/// <summary>
-		/// Sets the class registry.
-		/// </summary>
-		/// <returns><c>true</c>, if class registry was set, <c>false</c> otherwise.</returns>
-		public virtual bool SetClassRegistry()
-		{
-			bool isSet = false;
-			ComponentLoader.InitClassRegistry();
-			isSet = true;
-			log.DebugFormat("ClassRegistry set: {0}", isSet);
-			return isSet;
-		}
+        /// <summary>
+        /// Sets the culture.
+        /// </summary>
+        /// <returns><c>true</c>, if culture was set, <c>false</c> otherwise.</returns>
+        public virtual bool SetCulture()
+        {
+            var specificCulture = CultureInfo.CreateSpecificCulture(ConsoleCulture);
+            var uiCulture = new CultureInfo(ConsoleCulture);
+            Thread.CurrentThread.CurrentCulture = specificCulture;
+            Thread.CurrentThread.CurrentUICulture = uiCulture;
+            Log.DebugFormat("CurrentCulture set to: {0}", ConsoleCulture);
+            return true;
+        }
 
-		/// <summary>
-		/// Sets the culture.
-		/// </summary>
-		/// <returns><c>true</c>, if culture was set, <c>false</c> otherwise.</returns>
-		public virtual bool SetCulture()
-		{
-			var specificCulture = CultureInfo.CreateSpecificCulture(ConsoleCulture);
-			var uiCulture = new CultureInfo(ConsoleCulture);
-			Thread.CurrentThread.CurrentCulture = specificCulture;
-			Thread.CurrentThread.CurrentUICulture = uiCulture;
-			log.DebugFormat("CurrentCulture set to: {0}", ConsoleCulture);
-			return true;
-		}
-
-	}
+    }
 
 }
