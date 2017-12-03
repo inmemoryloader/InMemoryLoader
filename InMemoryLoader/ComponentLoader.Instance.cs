@@ -54,7 +54,7 @@ namespace InMemoryLoader
 		/// <summary>
 		/// The assembly references.
 		/// </summary>
-        readonly Hashtable AssemblyReferences = new Hashtable();
+        readonly Hashtable _assemblyReferences = new Hashtable();
 
 		/// <summary>
 		/// The class references.

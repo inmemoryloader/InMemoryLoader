@@ -44,13 +44,13 @@ namespace InMemoryLoader
 			{
 				Assembly assembly;
 
-                if (AssemblyReferences.ContainsKey(assemblyName) == false)
+                if (_assemblyReferences.ContainsKey(assemblyName) == false)
 				{
-                    AssemblyReferences.Add(assemblyName, assembly = Assembly.LoadFrom(assemblyName));
+                    _assemblyReferences.Add(assemblyName, assembly = Assembly.LoadFrom(assemblyName));
 				}
 				else
 				{
-                    assembly = (Assembly)AssemblyReferences[assemblyName];
+                    assembly = (Assembly)_assemblyReferences[assemblyName];
 				}
 
 				foreach (Type type in assembly.GetTypes())
