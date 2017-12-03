@@ -32,36 +32,36 @@ namespace InMemoryLoader
 {
 	public partial class ComponentLoader
 	{
-		/// <summary>
-		/// Gets the class reference.
-		/// </summary>
-		/// <returns>The class reference.</returns>
-		/// <param name="AssemblyName">Assembly name.</param>
-		/// <param name="ClassName">Class name.</param>
-		public IDynamicClassInfo GetClassReference(string AssemblyName, string ClassName)
+        /// <summary>
+        /// Gets the class reference.
+        /// </summary>
+        /// <returns>The class reference.</returns>
+        /// <param name="assemblyName">Assembly name.</param>
+        /// <param name="className">Class name.</param>
+		public IDynamicClassInfo GetClassReference(string assemblyName, string className)
 		{
-			if (ClassReferences.ContainsKey(AssemblyName) == false)
+            if (ClassReferences.ContainsKey(assemblyName) == false)
 			{
 				Assembly assembly;
 
-				if (AssemblyReferences.ContainsKey(AssemblyName) == false)
+                if (AssemblyReferences.ContainsKey(assemblyName) == false)
 				{
-					AssemblyReferences.Add(AssemblyName, assembly = Assembly.LoadFrom(AssemblyName));
+                    AssemblyReferences.Add(assemblyName, assembly = Assembly.LoadFrom(assemblyName));
 				}
 				else
 				{
-					assembly = (Assembly)AssemblyReferences[AssemblyName];
+                    assembly = (Assembly)AssemblyReferences[assemblyName];
 				}
 
 				foreach (Type type in assembly.GetTypes())
 				{
-					if (type.IsClass && type.IsPublic && type.FullName.EndsWith("." + ClassName, StringComparison.InvariantCultureIgnoreCase))
+                    if (type.IsClass && type.IsPublic && type.FullName.EndsWith("." + className, StringComparison.InvariantCultureIgnoreCase))
 					{
 						IDynamicClassInfo classInfo = new DynamicClassInfo(type, Activator.CreateInstance(type));
 
 						if (typeof(InMemoryLoaderBase.AbstractPowerUpComponent).IsAssignableFrom(classInfo.ClassType))
 						{
-							ClassReferences.Add(AssemblyName, classInfo);
+                            ClassReferences.Add(assemblyName, classInfo);
 							return (classInfo);
 						}
 						else
@@ -72,7 +72,7 @@ namespace InMemoryLoader
 				}
 				throw (new System.Exception("Could not instantiate Class"));
 			}
-			return ((DynamicClassInfo)ClassReferences[AssemblyName]);
+            return ((DynamicClassInfo)ClassReferences[assemblyName]);
 		}
 
 		/// <summary>

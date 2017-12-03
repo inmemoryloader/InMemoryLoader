@@ -39,7 +39,7 @@ namespace InMemoryLoader
 		/// <summary>
 		/// The log.
 		/// </summary>
-		private static readonly ILog log = LogManager.GetLogger(typeof(AbstractLoaderBase));
+		private static readonly ILog Log = LogManager.GetLogger(typeof(AbstractLoaderBase));
 
 		/// <summary>
 		/// The application key.
@@ -75,7 +75,7 @@ namespace InMemoryLoader
 		{
 			var compPath = string.Empty;
 			compPath = AppDomain.CurrentDomain.BaseDirectory;
-			log.DebugFormat("AssemblyPath set to: {0}", AssemblyPath);
+            Log.DebugFormat("AssemblyPath set to: {0}", AssemblyPath);
 			return compPath;
 		}
 
@@ -89,7 +89,7 @@ namespace InMemoryLoader
 			GetAssemblyPath();
 			ComponentLoader = ComponentLoader.Instance;
 			isSet = true;
-			log.DebugFormat("InMemoryLoader set: {0}", isSet);
+            Log.DebugFormat("InMemoryLoader set: {0}", isSet);
 			return isSet;
 		}
 
@@ -102,7 +102,7 @@ namespace InMemoryLoader
 			bool isSet = false;
 			ComponentLoader.InitClassRegistry();
 			isSet = true;
-			log.DebugFormat("ClassRegistry set: {0}", isSet);
+            Log.DebugFormat("ClassRegistry set: {0}", isSet);
 			return isSet;
 		}
 
@@ -116,7 +116,7 @@ namespace InMemoryLoader
 			var uiCulture = new CultureInfo(ConsoleCulture);
 			Thread.CurrentThread.CurrentCulture = specificCulture;
 			Thread.CurrentThread.CurrentUICulture = uiCulture;
-			log.DebugFormat("CurrentCulture set to: {0}", ConsoleCulture);
+            Log.DebugFormat("CurrentCulture set to: {0}", ConsoleCulture);
 			return true;
 		}
 

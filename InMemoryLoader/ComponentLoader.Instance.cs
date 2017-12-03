@@ -44,7 +44,7 @@ namespace InMemoryLoader
 		/// <summary>
 		/// The instance.
 		/// </summary>
-		private static volatile ComponentLoader instance;
+		private static volatile ComponentLoader _instance;
 
 		/// <summary>
 		/// The sync root.
@@ -85,19 +85,19 @@ namespace InMemoryLoader
 		{
 			get
 			{
-				if (instance == null)
+                if (_instance == null)
 				{
 					lock (syncRoot)
 					{
-						if (instance == null)
+                        if (_instance == null)
 						{
-							instance = new ComponentLoader();
-							log.DebugFormat("Create a new instance of Type: {0}", instance.GetType().ToString());
+                            _instance = new ComponentLoader();
+                            log.DebugFormat("Create a new instance of Type: {0}", _instance.GetType().ToString());
 						}
 					}
 				}
 
-				return instance;
+                return _instance;
 			}
 		}
 	}

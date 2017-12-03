@@ -73,17 +73,17 @@ namespace InMemoryLoader
 			return true;
 		}
 
-		/// <summary>
-		/// Inits the component.
-		/// </summary>
-		/// <returns>The component.</returns>
-		/// <param name="ClassSetup">Class setup.</param>
-		/// <param name="paramArgs">Parameter arguments.</param>
-		public Object InitComponent(IDynamicClassSetup ClassSetup, Object[] paramArgs)
+        /// <summary>
+        /// Inits the component.
+        /// </summary>
+        /// <returns>The component.</returns>
+        /// <param name="classSetup">Class setup.</param>
+        /// <param name="paramArgs">Parameter arguments.</param>
+		public Object InitComponent(IDynamicClassSetup classSetup, Object[] paramArgs)
 		{
 			try
 			{
-				var returnObject = InvokeMethod(ClassSetup.Assembly, ClassSetup.Class, ClassSetup.InitMethod, paramArgs);
+                var returnObject = InvokeMethod(classSetup.Assembly, classSetup.Class, classSetup.InitMethod, paramArgs);
 				return returnObject;
 			}
 			catch (Exception)
