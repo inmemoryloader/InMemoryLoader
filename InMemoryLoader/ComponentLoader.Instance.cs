@@ -39,27 +39,27 @@ namespace InMemoryLoader
 		/// <summary>
 		/// The log.
 		/// </summary>
-		private static ILog log = LogManager.GetLogger(typeof(ComponentLoader));
+		readonly static ILog Log = LogManager.GetLogger(typeof(ComponentLoader));
 
 		/// <summary>
 		/// The instance.
 		/// </summary>
-		private static volatile ComponentLoader instance;
+		static volatile ComponentLoader _instance;
 
 		/// <summary>
 		/// The sync root.
 		/// </summary>
-		private static object syncRoot = new Object();
+        readonly static object SyncRoot = new Object();
 
 		/// <summary>
 		/// The assembly references.
 		/// </summary>
-		internal Hashtable AssemblyReferences = new Hashtable();
+        readonly Hashtable _assemblyReferences = new Hashtable();
 
 		/// <summary>
 		/// The class references.
 		/// </summary>
-		internal IDictionary<string, IDynamicClassInfo> ClassReferences;
+		IDictionary<string, IDynamicClassInfo> ClassReferences;
 
 		/// <summary>
 		/// The component registry.
@@ -85,19 +85,19 @@ namespace InMemoryLoader
 		{
 			get
 			{
-				if (instance == null)
+                if (_instance == null)
 				{
-					lock (syncRoot)
+					lock (SyncRoot)
 					{
-						if (instance == null)
+                        if (_instance == null)
 						{
-							instance = new ComponentLoader();
-							log.DebugFormat("Create a new instance of Type: {0}", instance.GetType().ToString());
+                            _instance = new ComponentLoader();
+                            Log.DebugFormat("Create a new instance of Type: {0}", _instance.GetType());
 						}
 					}
 				}
 
-				return instance;
+                return _instance;
 			}
 		}
 	}

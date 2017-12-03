@@ -30,60 +30,65 @@ using System.Reflection;
 
 namespace InMemoryLoader
 {
-	public partial class ComponentLoader
-	{
-		/// <summary>
-		/// Gets the class reference.
-		/// </summary>
-		/// <returns>The class reference.</returns>
-		/// <param name="AssemblyName">Assembly name.</param>
-		/// <param name="ClassName">Class name.</param>
-		public IDynamicClassInfo GetClassReference(string AssemblyName, string ClassName)
-		{
-			if (ClassReferences.ContainsKey(AssemblyName) == false)
-			{
-				Assembly assembly;
+    public partial class ComponentLoader
+    {
+        /// <summary>
+        /// Gets the class reference.
+        /// </summary>
+        /// <returns>The class reference.</returns>
+        /// <param name="assemblyName">Assembly name.</param>
+        /// <param name="className">Class name.</param>
+		public IDynamicClassInfo GetClassReference(string assemblyName, string className)
+        {
+            if (string.IsNullOrEmpty(assemblyName) || string.IsNullOrEmpty(className))
+            {
+                throw new ArgumentNullException();
+            }
 
-				if (AssemblyReferences.ContainsKey(AssemblyName) == false)
-				{
-					AssemblyReferences.Add(AssemblyName, assembly = Assembly.LoadFrom(AssemblyName));
-				}
-				else
-				{
-					assembly = (Assembly)AssemblyReferences[AssemblyName];
-				}
+            if (ClassReferences.ContainsKey(assemblyName) == false)
+            {
+                Assembly assembly;
 
-				foreach (Type type in assembly.GetTypes())
-				{
-					if (type.IsClass && type.IsPublic && type.FullName.EndsWith("." + ClassName, StringComparison.InvariantCultureIgnoreCase))
-					{
-						IDynamicClassInfo classInfo = new DynamicClassInfo(type, Activator.CreateInstance(type));
+                if (_assemblyReferences.ContainsKey(assemblyName) == false)
+                {
+                    _assemblyReferences.Add(assemblyName, assembly = Assembly.LoadFrom(assemblyName));
+                }
+                else
+                {
+                    assembly = (Assembly)_assemblyReferences[assemblyName];
+                }
 
-						if (typeof(InMemoryLoaderBase.AbstractPowerUpComponent).IsAssignableFrom(classInfo.ClassType))
-						{
-							ClassReferences.Add(AssemblyName, classInfo);
-							return (classInfo);
-						}
-						else
-						{
-							throw (new System.Exception("Class is not typeof(InMemoryLoaderBase.AbstractPowerUpComponent)"));
-						}
-					}
-				}
-				throw (new System.Exception("Could not instantiate Class"));
-			}
-			return ((DynamicClassInfo)ClassReferences[AssemblyName]);
-		}
+                foreach (Type type in assembly.GetTypes())
+                {
+                    if (type.IsClass && type.IsPublic && type.FullName.EndsWith("." + className, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        IDynamicClassInfo classInfo = new DynamicClassInfo(type, Activator.CreateInstance(type));
 
-		/// <summary>
-		/// Gets the class reference.
-		/// </summary>
-		/// <returns>The class reference.</returns>
-		/// <param name="paramClassName">Parameter class name.</param>
-		public IDynamicClassInfo GetClassReference(string paramClassName)
-		{
-			var value = ClassReferences.FirstOrDefault(cls => cls.Value.ClassType.Name.Contains(paramClassName));
-			return !string.IsNullOrEmpty(value.Key) ? value.Value : null;
-		}
-	}
+                        if (typeof(InMemoryLoaderBase.AbstractPowerUpComponent).IsAssignableFrom(classInfo.ClassType))
+                        {
+                            ClassReferences.Add(assemblyName, classInfo);
+                            return (classInfo);
+                        }
+                        else
+                        {
+                            throw (new System.Exception("Class is not typeof(InMemoryLoaderBase.AbstractPowerUpComponent)"));
+                        }
+                    }
+                }
+                throw (new System.Exception("Could not instantiate Class"));
+            }
+            return ((DynamicClassInfo)ClassReferences[assemblyName]);
+        }
+
+        /// <summary>
+        /// Gets the class reference.
+        /// </summary>
+        /// <returns>The class reference.</returns>
+        /// <param name="paramClassName">Parameter class name.</param>
+        public IDynamicClassInfo GetClassReference(string paramClassName)
+        {
+            var value = ClassReferences.FirstOrDefault(cls => cls.Value.ClassType.Name.Contains(paramClassName));
+            return !string.IsNullOrEmpty(value.Key) ? value.Value : null;
+        }
+    }
 }

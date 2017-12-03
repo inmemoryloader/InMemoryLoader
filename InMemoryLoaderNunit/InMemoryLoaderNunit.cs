@@ -39,13 +39,13 @@ namespace InMemoryLoaderNunit
         /// Gets the console culture.
         /// </summary>
         /// <value>The console culture.</value>
-        internal string ConsoleCulture { get { return ConfigurationManager.AppSettings["ConsoleCulture"].ToString(); } }
+        string ConsoleCulture { get { return ConfigurationManager.AppSettings["ConsoleCulture"]; } }
 
         /// <summary>
         /// Gets the application key.
         /// </summary>
         /// <value>The application key.</value>
-        internal string ApplicationKey { get { return ConfigurationManager.AppSettings["ApplicationKey"].ToString(); } }
+        string ApplicationKey { get { return ConfigurationManager.AppSettings["ApplicationKey"]; } }
 
         /// <summary>
         /// Tests the abstract loader base.
@@ -55,13 +55,12 @@ namespace InMemoryLoaderNunit
         {
             var path = AppDomain.CurrentDomain.BaseDirectory;
 
-            var testHelper = new TestHelper(this.ConsoleCulture, path);
+            var testHelper = new TestHelper(ConsoleCulture, path);
 
             Assert.IsTrue(testHelper.IsAssemblyPathSet());
             Assert.IsTrue(testHelper.IsCultureSet());
             Assert.IsTrue(testHelper.IsInMemoryLoaderSet());
             Assert.IsTrue(testHelper.IsRegistrySet());
-
         }
 
     }

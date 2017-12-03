@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -31,6 +31,9 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="InMemoryLoaderBase, Version=0.3.2.10, Culture=neutral, PublicKeyToken=0b5fb30ca5b127b9, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMemoryLoaderBase.0.3.2.11\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
@@ -38,9 +41,6 @@
     <Reference Include="System.Configuration" />
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoaderBase.0.3.2.9\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
