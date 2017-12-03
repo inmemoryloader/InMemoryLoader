@@ -30,8 +30,8 @@ using System.Reflection;
 
 namespace InMemoryLoader
 {
-	public partial class ComponentLoader
-	{
+    public partial class ComponentLoader
+    {
         /// <summary>
         /// Gets the class reference.
         /// </summary>
@@ -39,51 +39,51 @@ namespace InMemoryLoader
         /// <param name="assemblyName">Assembly name.</param>
         /// <param name="className">Class name.</param>
 		public IDynamicClassInfo GetClassReference(string assemblyName, string className)
-		{
+        {
             if (ClassReferences.ContainsKey(assemblyName) == false)
-			{
-				Assembly assembly;
+            {
+                Assembly assembly;
 
                 if (_assemblyReferences.ContainsKey(assemblyName) == false)
-				{
+                {
                     _assemblyReferences.Add(assemblyName, assembly = Assembly.LoadFrom(assemblyName));
-				}
-				else
-				{
+                }
+                else
+                {
                     assembly = (Assembly)_assemblyReferences[assemblyName];
-				}
+                }
 
-				foreach (Type type in assembly.GetTypes())
-				{
+                foreach (Type type in assembly.GetTypes())
+                {
                     if (type.IsClass && type.IsPublic && type.FullName.EndsWith("." + className, StringComparison.InvariantCultureIgnoreCase))
-					{
-						IDynamicClassInfo classInfo = new DynamicClassInfo(type, Activator.CreateInstance(type));
+                    {
+                        IDynamicClassInfo classInfo = new DynamicClassInfo(type, Activator.CreateInstance(type));
 
-						if (typeof(InMemoryLoaderBase.AbstractPowerUpComponent).IsAssignableFrom(classInfo.ClassType))
-						{
+                        if (typeof(InMemoryLoaderBase.AbstractPowerUpComponent).IsAssignableFrom(classInfo.ClassType))
+                        {
                             ClassReferences.Add(assemblyName, classInfo);
-							return (classInfo);
-						}
-						else
-						{
-							throw (new System.Exception("Class is not typeof(InMemoryLoaderBase.AbstractPowerUpComponent)"));
-						}
-					}
-				}
-				throw (new System.Exception("Could not instantiate Class"));
-			}
+                            return (classInfo);
+                        }
+                        else
+                        {
+                            throw (new System.Exception("Class is not typeof(InMemoryLoaderBase.AbstractPowerUpComponent)"));
+                        }
+                    }
+                }
+                throw (new System.Exception("Could not instantiate Class"));
+            }
             return ((DynamicClassInfo)ClassReferences[assemblyName]);
-		}
+        }
 
-		/// <summary>
-		/// Gets the class reference.
-		/// </summary>
-		/// <returns>The class reference.</returns>
-		/// <param name="paramClassName">Parameter class name.</param>
-		public IDynamicClassInfo GetClassReference(string paramClassName)
-		{
-			var value = ClassReferences.FirstOrDefault(cls => cls.Value.ClassType.Name.Contains(paramClassName));
-			return !string.IsNullOrEmpty(value.Key) ? value.Value : null;
-		}
-	}
+        /// <summary>
+        /// Gets the class reference.
+        /// </summary>
+        /// <returns>The class reference.</returns>
+        /// <param name="paramClassName">Parameter class name.</param>
+        public IDynamicClassInfo GetClassReference(string paramClassName)
+        {
+            var value = ClassReferences.FirstOrDefault(cls => cls.Value.ClassType.Name.Contains(paramClassName));
+            return !string.IsNullOrEmpty(value.Key) ? value.Value : null;
+        }
+    }
 }

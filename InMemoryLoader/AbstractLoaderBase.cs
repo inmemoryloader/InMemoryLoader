@@ -39,7 +39,7 @@ namespace InMemoryLoader
         /// <summary>
         /// The log.
         /// </summary>
-        static readonly ILog Log = LogManager.GetLogger (typeof (AbstractLoaderBase));
+        static readonly ILog Log = LogManager.GetLogger(typeof(AbstractLoaderBase));
 
         /// <summary>
         /// The application key.
@@ -66,11 +66,11 @@ namespace InMemoryLoader
         /// Gets the assembly path.
         /// </summary>
         /// <returns>The assembly path.</returns>
-        public virtual string GetAssemblyPath ()
+        public virtual string GetAssemblyPath()
         {
             var compPath = string.Empty;
             compPath = AppDomain.CurrentDomain.BaseDirectory;
-            Log.DebugFormat ("AssemblyPath set to: {0}", AssemblyPath);
+            Log.DebugFormat("AssemblyPath set to: {0}", AssemblyPath);
             return compPath;
         }
 
@@ -78,12 +78,12 @@ namespace InMemoryLoader
         /// Sets the in memory loader.
         /// </summary>
         /// <returns><c>true</c>, if in memory loader was set, <c>false</c> otherwise.</returns>
-        public virtual bool SetInMemoryLoader ()
+        public virtual bool SetInMemoryLoader()
         {
-            GetAssemblyPath ();
+            GetAssemblyPath();
             ComponentLoader = ComponentLoader.Instance;
             bool isSet = ComponentLoader != null;
-            Log.DebugFormat ("InMemoryLoader set: {0}", isSet);
+            Log.DebugFormat("InMemoryLoader set: {0}", isSet);
             return isSet;
         }
 
@@ -91,10 +91,10 @@ namespace InMemoryLoader
         /// Sets the class registry.
         /// </summary>
         /// <returns><c>true</c>, if class registry was set, <c>false</c> otherwise.</returns>
-        public virtual bool SetClassRegistry ()
+        public virtual bool SetClassRegistry()
         {
-            bool isSet = ComponentLoader.InitClassRegistry ();
-            Log.DebugFormat ("ClassRegistry set: {0}", isSet);
+            bool isSet = ComponentLoader.InitClassRegistry();
+            Log.DebugFormat("ClassRegistry set: {0}", isSet);
             return isSet;
         }
 
@@ -102,13 +102,13 @@ namespace InMemoryLoader
         /// Sets the culture.
         /// </summary>
         /// <returns><c>true</c>, if culture was set, <c>false</c> otherwise.</returns>
-        public virtual bool SetCulture ()
+        public virtual bool SetCulture()
         {
-            var specificCulture = CultureInfo.CreateSpecificCulture (ConsoleCulture);
-            var uiCulture = new CultureInfo (ConsoleCulture);
+            var specificCulture = CultureInfo.CreateSpecificCulture(ConsoleCulture);
+            var uiCulture = new CultureInfo(ConsoleCulture);
             Thread.CurrentThread.CurrentCulture = specificCulture;
             Thread.CurrentThread.CurrentUICulture = uiCulture;
-            Log.DebugFormat ("CurrentCulture set to: {0}", ConsoleCulture);
+            Log.DebugFormat("CurrentCulture set to: {0}", ConsoleCulture);
             return true;
         }
 

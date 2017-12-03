@@ -38,12 +38,13 @@ namespace InMemoryLoader.Helper
         /// <returns>The field value.</returns>
         /// <param name="fieldName">Field name.</param>
         /// <param name="paramObject">Parameter object.</param>
-		public static object GetFieldValue (string fieldName, object paramObject)
+		public static object GetFieldValue(string fieldName, object paramObject)
         {
-            if (string.IsNullOrEmpty (fieldName) || paramObject == null) {
-                throw new ArgumentNullException ();
+            if (string.IsNullOrEmpty(fieldName) || paramObject == null)
+            {
+                throw new ArgumentNullException();
             }
-            var value = paramObject.GetType ().GetField (fieldName).GetValue (paramObject);
+            var value = paramObject.GetType().GetField(fieldName).GetValue(paramObject);
             return value;
         }
         /// <summary>
@@ -52,12 +53,13 @@ namespace InMemoryLoader.Helper
         /// <returns>The property value.</returns>
         /// <param name="propertyName">Property name.</param>
         /// <param name="paramObject">Parameter object.</param>
-		public static object GetPropertyValue (string propertyName, object paramObject)
+		public static object GetPropertyValue(string propertyName, object paramObject)
         {
-            if (string.IsNullOrEmpty (propertyName) || paramObject == null) {
-                throw new ArgumentNullException ();
+            if (string.IsNullOrEmpty(propertyName) || paramObject == null)
+            {
+                throw new ArgumentNullException();
             }
-            var value = paramObject.GetType ().GetProperty (propertyName).GetValue (paramObject);
+            var value = paramObject.GetType().GetProperty(propertyName).GetValue(paramObject);
             return value;
         }
 

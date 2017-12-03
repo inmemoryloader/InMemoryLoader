@@ -36,31 +36,37 @@ namespace InMemoryLoader
         /// Inits the class registry.
         /// </summary>
         /// <returns><c>true</c>, if class registry was inited, <c>false</c> otherwise.</returns>
-        public bool InitClassRegistry ()
+        public bool InitClassRegistry()
         {
-            if (ComponentRegistry == null) {
-                ComponentRegistry = new Dictionary<IDynamicClassSetup, IDynamicClassInfo> ();
+            if (ComponentRegistry == null)
+            {
+                ComponentRegistry = new Dictionary<IDynamicClassSetup, IDynamicClassInfo>();
             }
 
-            foreach (var item in ClassReferences) {
+            foreach (var item in ClassReferences)
+            {
 
-                var dynclass = new DynamicClassSetup ();
+                var dynclass = new DynamicClassSetup();
                 dynclass.Assembly = item.Key;
                 dynclass.Class = item.Value.ClassType.Name;
 
-                var type = GetClassReference (dynclass.Class);
+                var type = GetClassReference(dynclass.Class);
 
-                if (!ComponentRegistry.Keys.Any (ky => ky.Assembly.Contains (dynclass.Assembly))) {
-                    ComponentRegistry.Add (dynclass, type);
-                    if (Log.IsDebugEnabled) {
-                        Log.DebugFormat ("Add AssemblyName: {0}, ClassType.FullName: {1} to ComponentRegistry", dynclass.Assembly, dynclass.Class);
+                if (!ComponentRegistry.Keys.Any(ky => ky.Assembly.Contains(dynclass.Assembly)))
+                {
+                    ComponentRegistry.Add(dynclass, type);
+                    if (Log.IsDebugEnabled)
+                    {
+                        Log.DebugFormat("Add AssemblyName: {0}, ClassType.FullName: {1} to ComponentRegistry", dynclass.Assembly, dynclass.Class);
                     }
                 }
             }
 
-            if (Log.IsDebugEnabled) {
-                foreach (var item in ComponentRegistry) {
-                    Log.InfoFormat ("ComponentRegistry contains AssemblyName: {0}, ClassType.FullName: {1}", item.Key.Assembly, item.Key.Class);
+            if (Log.IsDebugEnabled)
+            {
+                foreach (var item in ComponentRegistry)
+                {
+                    Log.InfoFormat("ComponentRegistry contains AssemblyName: {0}, ClassType.FullName: {1}", item.Key.Assembly, item.Key.Class);
                 }
             }
 
@@ -73,12 +79,15 @@ namespace InMemoryLoader
         /// <returns>The component.</returns>
         /// <param name="classSetup">Class setup.</param>
         /// <param name="paramArgs">Parameter arguments.</param>
-		public Object InitComponent (IDynamicClassSetup classSetup, Object [] paramArgs)
+		public Object InitComponent(IDynamicClassSetup classSetup, Object[] paramArgs)
         {
-            try {
-                var returnObject = InvokeMethod (classSetup.Assembly, classSetup.Class, classSetup.InitMethod, paramArgs);
+            try
+            {
+                var returnObject = InvokeMethod(classSetup.Assembly, classSetup.Class, classSetup.InitMethod, paramArgs);
                 return returnObject;
-            } catch (Exception) {
+            }
+            catch (Exception)
+            {
                 throw;
             }
         }
