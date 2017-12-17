@@ -1,7 +1,7 @@
 ﻿//
 // TestHelper.cs
 //
-// Author: responsive kaysta <me@responsive-kaysta.ch>
+// Author: responsive kaysta
 //
 // Copyright (c) 2017 responsive kaysta
 //

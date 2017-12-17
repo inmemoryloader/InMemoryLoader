@@ -1,7 +1,7 @@
 ﻿//
 // InMemoryLoaderNunit.cs
 //
-// Author: responsive kaysta <me@responsive-kaysta.ch>
+// Author: responsive kaysta
 //
 // Copyright (c) 2017 responsive kaysta
 //
@@ -39,13 +39,13 @@ namespace InMemoryLoaderNunit
         /// Gets the console culture.
         /// </summary>
         /// <value>The console culture.</value>
-        string ConsoleCulture { get { return ConfigurationManager.AppSettings["ConsoleCulture"]; } }
+        static string ConsoleCulture { get { return ConfigurationManager.AppSettings["ConsoleCulture"]; } }
 
         /// <summary>
         /// Gets the application key.
         /// </summary>
         /// <value>The application key.</value>
-        string ApplicationKey { get { return ConfigurationManager.AppSettings["ApplicationKey"]; } }
+        static string ApplicationKey { get { return ConfigurationManager.AppSettings["ApplicationKey"]; } }
 
         /// <summary>
         /// Tests the abstract loader base.

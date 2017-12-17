@@ -1,7 +1,7 @@
 ﻿//
 // ComponentLoader.Instance.cs
 //
-// Author: Kay Stuckenschmidt <mailto.kaysta@gmail.com>
+// Author: Kay Stuckenschmidt
 //
 // Copyright (c) 2017 responsive-kaysta
 //
@@ -31,74 +31,74 @@ using System.Collections.Generic;
 
 namespace InMemoryLoader
 {
-	/// <summary>
-	/// Component loader.
-	/// </summary>
-	public partial class ComponentLoader
-	{
-		/// <summary>
-		/// The log.
-		/// </summary>
-		readonly static ILog Log = LogManager.GetLogger(typeof(ComponentLoader));
+    /// <summary>
+    /// Component loader.
+    /// </summary>
+    public partial class ComponentLoader
+    {
+        /// <summary>
+        /// The log.
+        /// </summary>
+        readonly static ILog Log = LogManager.GetLogger(typeof(ComponentLoader));
 
-		/// <summary>
-		/// The instance.
-		/// </summary>
-		static volatile ComponentLoader _instance;
+        /// <summary>
+        /// The instance.
+        /// </summary>
+        static volatile ComponentLoader _instance;
 
-		/// <summary>
-		/// The sync root.
-		/// </summary>
+        /// <summary>
+        /// The sync root.
+        /// </summary>
         readonly static object SyncRoot = new Object();
 
-		/// <summary>
-		/// The assembly references.
-		/// </summary>
+        /// <summary>
+        /// The assembly references.
+        /// </summary>
         readonly Hashtable _assemblyReferences = new Hashtable();
 
-		/// <summary>
-		/// The class references.
-		/// </summary>
-		IDictionary<string, IDynamicClassInfo> ClassReferences;
+        /// <summary>
+        /// The class references.
+        /// </summary>
+        IDictionary<string, IDynamicClassInfo> ClassReferences;
 
-		/// <summary>
-		/// The component registry.
-		/// </summary>
-		public IDictionary<IDynamicClassSetup, IDynamicClassInfo> ComponentRegistry;
+        /// <summary>
+        /// The component registry.
+        /// </summary>
+        public IDictionary<IDynamicClassSetup, IDynamicClassInfo> ComponentRegistry;
 
-		/// <summary>
-		/// Initializes a new instance of the <see cref="T:InMemoryLoader.ComponentLoader"/> class.
-		/// </summary>
-		private ComponentLoader()
-		{
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:InMemoryLoader.ComponentLoader"/> class.
+        /// </summary>
+        private ComponentLoader()
+        {
             if (ClassReferences == null)
-			{
+            {
                 ClassReferences = new Dictionary<string, IDynamicClassInfo>();
-			}
-		}
+            }
+        }
 
-		/// <summary>
-		/// Gets the instance.
-		/// </summary>
-		/// <value>The instance.</value>
-		public static ComponentLoader Instance
-		{
-			get
-			{
+        /// <summary>
+        /// Gets the instance.
+        /// </summary>
+        /// <value>The instance.</value>
+        public static ComponentLoader Instance
+        {
+            get
+            {
                 if (_instance == null)
-				{
-					lock (SyncRoot)
-					{
+                {
+                    lock (SyncRoot)
+                    {
                         if (_instance == null)
-						{
+                        {
                             _instance = new ComponentLoader();
                             Log.DebugFormat("Create a new instance of Type: {0}", _instance.GetType());
-						}
-					}
-				}
+                        }
+                    }
+                }
 
                 return _instance;
-			}
-		}
-	}
+            }
+        }
+    }
 }

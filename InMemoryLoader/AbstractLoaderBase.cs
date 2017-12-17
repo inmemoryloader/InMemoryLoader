@@ -1,7 +1,7 @@
 ﻿//
 // AbstractLoaderBase.cs
 //
-// Author: Kay Stuckenschmidt <mailto.kaysta@gmail.com>
+// Author: Kay Stuckenschmidt
 //
 // Copyright (c) 2017 responsive kaysta
 //
@@ -34,7 +34,7 @@ namespace InMemoryLoader
     /// <summary>
     /// AbstractLoaderBase
     /// </summary>
-	public abstract class AbstractLoaderBase
+    public abstract class AbstractLoaderBase
     {
         /// <summary>
         /// The log.
@@ -51,11 +51,13 @@ namespace InMemoryLoader
         /// </summary>
         /// <value>The assembly path.</value>
         public string AssemblyPath { get; set; }
+
         /// <summary>
         /// Gets or sets the console culture.
         /// </summary>
         /// <value>The console culture.</value>
         public string ConsoleCulture { get; set; }
+
         /// <summary>
         /// Gets or sets the component loader.
         /// </summary>
