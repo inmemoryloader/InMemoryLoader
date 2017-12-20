@@ -1,7 +1,7 @@
 ﻿//
 // ComponentLoader.Get.cs
 //
-// Author: Kay Stuckenschmidt <mailto.kaysta@gmail.com>
+// Author: Kay Stuckenschmidt
 //
 // Copyright (c) 2017 responsive-kaysta
 //
@@ -38,7 +38,7 @@ namespace InMemoryLoader
         /// <returns>The class reference.</returns>
         /// <param name="assemblyName">Assembly name.</param>
         /// <param name="className">Class name.</param>
-		public IDynamicClassInfo GetClassReference(string assemblyName, string className)
+        public IDynamicClassInfo GetClassReference(string assemblyName, string className)
         {
             if (string.IsNullOrEmpty(assemblyName) || string.IsNullOrEmpty(className))
             {

@@ -69,12 +69,9 @@ namespace InMemoryLoader
         /// <summary>
         /// Initializes a new instance of the <see cref="T:InMemoryLoader.ComponentLoader"/> class.
         /// </summary>
-        private ComponentLoader()
+        ComponentLoader()
         {
-            if (ClassReferences == null)
-            {
-                ClassReferences = new Dictionary<string, IDynamicClassInfo>();
-            }
+            ClassReferences = ClassReferences ?? new Dictionary<string, IDynamicClassInfo>();
         }
 
         /// <summary>

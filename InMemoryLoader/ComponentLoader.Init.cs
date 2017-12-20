@@ -1,7 +1,7 @@
 ﻿//
 // ComponentLoader.Init.cs
 //
-// Author: Kay Stuckenschmidt <mailto.kaysta@gmail.com>
+// Author: Kay Stuckenschmidt
 //
 // Copyright (c) 2017 responsive-kaysta
 //
@@ -38,10 +38,7 @@ namespace InMemoryLoader
         /// <returns><c>true</c>, if class registry was inited, <c>false</c> otherwise.</returns>
         public bool InitClassRegistry()
         {
-            if (ComponentRegistry == null)
-            {
-                ComponentRegistry = new Dictionary<IDynamicClassSetup, IDynamicClassInfo>();
-            }
+            ComponentRegistry = ComponentRegistry ?? new Dictionary<IDynamicClassSetup, IDynamicClassInfo>();
 
             foreach (var item in ClassReferences)
             {
@@ -79,7 +76,7 @@ namespace InMemoryLoader
         /// <returns>The component.</returns>
         /// <param name="classSetup">Class setup.</param>
         /// <param name="paramArgs">Parameter arguments.</param>
-		public Object InitComponent(IDynamicClassSetup classSetup, Object[] paramArgs)
+        public Object InitComponent(IDynamicClassSetup classSetup, Object[] paramArgs)
         {
             try
             {

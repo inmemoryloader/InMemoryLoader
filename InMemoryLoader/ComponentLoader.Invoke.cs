@@ -1,7 +1,7 @@
 ﻿//
 // ComponentLoader.Invoke.cs
 //
-// Author: Kay Stuckenschmidt <mailto.kaysta@gmail.com>
+// Author: Kay Stuckenschmidt
 //
 // Copyright (c) 2017 responsive-kaysta
 //
@@ -29,8 +29,8 @@ using System.Reflection;
 
 namespace InMemoryLoader
 {
-	public partial class ComponentLoader
-	{
+    public partial class ComponentLoader
+    {
         /// <summary>
         /// Invokes the method.
         /// </summary>
@@ -38,18 +38,18 @@ namespace InMemoryLoader
         /// <param name="classInfo">Class info.</param>
         /// <param name="methodName">Method name.</param>
         /// <param name="paramArgs">Parameter arguments.</param>
-		public dynamic InvokeMethod(IDynamicClassInfo classInfo, string methodName, Object[] paramArgs)
-		{
-			try
-			{
+        public dynamic InvokeMethod(IDynamicClassInfo classInfo, string methodName, Object[] paramArgs)
+        {
+            try
+            {
                 var result = classInfo.ClassType.InvokeMember(methodName, BindingFlags.Default | BindingFlags.InvokeMethod, null, classInfo.ClassObject, paramArgs);
-				return (result);
-			}
-			catch (Exception)
-			{
-				throw;
-			}
-		}
+                return result;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
         /// <summary>
         /// Invokes the method.
@@ -59,18 +59,18 @@ namespace InMemoryLoader
         /// <param name="className">Class name.</param>
         /// <param name="methodName">Method name.</param>
         /// <param name="paramArgs">Parameter arguments.</param>
-		public dynamic InvokeMethod(string assemblyName, string className, string methodName, Object[] paramArgs)
-		{
-			try
-			{
+        public dynamic InvokeMethod(string assemblyName, string className, string methodName, Object[] paramArgs)
+        {
+            try
+            {
                 var classInfo = GetClassReference(assemblyName, className);
                 var result = (InvokeMethod(classInfo, methodName, paramArgs));
-				return result;
-			}
-			catch (Exception)
-			{
-				throw;
-			}
-		}
-	}
+                return result;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+    }
 }
