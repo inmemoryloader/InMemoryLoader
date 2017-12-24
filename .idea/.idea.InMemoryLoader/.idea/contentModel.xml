@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="InMemoryLoader" t="IncludeRecursive">
+        <e p="AbstractLoaderBase.cs" t="Include" />
+        <e p="ComponentLoader.Get.cs" t="Include" />
+        <e p="ComponentLoader.Helper.cs" t="Include" />
+        <e p="ComponentLoader.Init.cs" t="Include" />
+        <e p="ComponentLoader.Instance.cs" t="Include" />
+        <e p="ComponentLoader.Invoke.cs" t="Include" />
+        <e p="Documentation" t="Include">
+          <e p="InMemoryLoader.cd" t="Include" />
+        </e>
+        <e p="Helper" t="Include">
+          <e p="ObjectHelper.cs" t="Include" />
+        </e>
+        <e p="InMemoryLoader.csproj" t="IncludeRecursive" />
+        <e p="InMemoryLoader.snk" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+      </e>
+      <e p="InMemoryLoader.sln" t="IncludeFlat" />
+      <e p="InMemoryLoaderNunit" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="InMemoryLoaderNunit.cs" t="Include" />
+        <e p="InMemoryLoaderNunit.csproj" t="IncludeRecursive" />
+        <e p="TestHelper.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+    <e p="$USER_HOME$/.Rider2017.2/system/resharper-host/local/Transient/ReSharperHost/v10/SolutionCaches/_InMemoryLoader.283193444.00" t="ExcludeRecursive" />
+  </component>
+</project>
