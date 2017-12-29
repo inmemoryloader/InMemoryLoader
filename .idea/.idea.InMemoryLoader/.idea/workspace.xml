@@ -22,7 +22,9 @@
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8433480-390c-4bf7-9f67-b2b6e1af533e" name="Default" comment="" />
+    <list default="true" id="d8433480-390c-4bf7-9f67-b2b6e1af533e" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.InMemoryLoader/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.InMemoryLoader/.idea/workspace.xml" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,22 +77,6 @@
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="InMemoryLoader (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="InMemoryLoader (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="InMemoryLoader" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="InMemoryLoader (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="InMemoryLoader" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Documentation" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="InMemoryLoader (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="InMemoryLoaderNunit" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -116,7 +102,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected=".NET Project.Default">
+  <component name="RunManager">
     <configuration name="Default" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -126,13 +112,18 @@
       <option name="USE_MONO" value="0" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="PROJECT_PATH" value="" />
-      <option name="PROJECT_OUTPUT_TRACKING" value="1" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="None" />
       <option name="PROJECT_TFM" value="" />
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -143,11 +134,12 @@
       <updated>1514069827011</updated>
       <workItem from="1514069831392" duration="100000" />
       <workItem from="1514069954040" duration="666000" />
+      <workItem from="1514486160264" duration="12000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="766000" />
+    <option name="totallyTimeSpent" value="778000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -159,7 +151,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="-1" width="1924" height="1057" extended-state="6" />
+    <frame x="-2" y="-1" width="1924" height="962" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -169,8 +161,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2553305" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25520834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -180,6 +172,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
+      <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
@@ -199,26 +192,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="22" column="10" lean-forward="true" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-          <folding>
-            <marker date="1513947303631" expanded="true" signature="0:1184" ph="/* ComponentLoader.Instance.cs ... */" />
-            <marker date="1513947303631" expanded="false" signature="1192:1300" ph="..." />
-            <marker date="1513947303631" expanded="true" signature="1326:3277" ph="{...}" />
-            <marker date="1513947303631" expanded="false" signature="1333:1391" ph="/// Component loader. ... " />
-            <marker date="1513947303631" expanded="true" signature="1432:3275" ph="{...}" />
-            <marker date="1513947303631" expanded="false" signature="1447:1504" ph="/// The log. ... " />
-            <marker date="1513947303631" expanded="false" signature="1596:1658" ph="/// The instance. ... " />
-            <marker date="1513947303631" expanded="false" signature="1719:1782" ph="/// The sync root. ... " />
-            <marker date="1513947303631" expanded="false" signature="1848:1921" ph="/// The assembly references. ... " />
-            <marker date="1513947303631" expanded="false" signature="1997:2067" ph="/// The class references. ... " />
-            <marker date="1513947303631" expanded="false" signature="2141:2213" ph="/// The component registry. ... " />
-            <marker date="1513947303631" expanded="false" signature="2308:2444" ph="/// Initializes a new instance of the &lt;see cref=&quot;T:InMemoryLoader.ComponentLoader&quot;/&gt; class. ... " />
-            <marker date="1513947303631" expanded="true" signature="2470:2584" ph="{...}" />
-            <marker date="1513947303631" expanded="false" signature="2594:2702" ph="/// Gets the instance. ... " />
-            <marker date="1513947303631" expanded="true" signature="2749:3269" ph="{...}" />
-            <marker date="1513947303631" expanded="true" signature="2775:3259" ph="{...}" />
-            <marker date="1513947303631" expanded="true" signature="2828:3210" ph="{...}" />
-            <marker date="1513947303631" expanded="true" signature="2951:3170" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -226,7 +199,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -234,12 +206,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1513947303635" expanded="true" signature="6:62" ph="..." />
-            <marker date="1513947303635" expanded="true" signature="64:193" ph="/* Information about this assembly is defined by the following attributes. ... */" />
-            <marker date="1513947303635" expanded="true" signature="686:910" ph="/* The assembly version has the format &quot;{Major}.{Minor}.{Build}.{Revision}&quot;. ... */" />
-            <marker date="1513947303635" expanded="true" signature="984:1217" ph="/* The following attributes are used to specify the signing key for the assembly, ... */" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -247,26 +213,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
           <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding>
-            <marker date="1513947303631" expanded="true" signature="0:1178" ph="/* AbstractLoaderBase.cs ... */" />
-            <marker date="1513947303631" expanded="false" signature="1186:1286" ph="..." />
-            <marker date="1513947303631" expanded="true" signature="1312:4192" ph="{...}" />
-            <marker date="1513947303631" expanded="false" signature="1319:1378" ph="/// AbstractLoaderBase ... " />
-            <marker date="1513947303631" expanded="true" signature="1423:4189" ph="{...}" />
-            <marker date="1513947303631" expanded="false" signature="1438:1495" ph="/// The log. ... " />
-            <marker date="1513947303631" expanded="false" signature="1590:1659" ph="/// The application key. ... " />
-            <marker date="1513947303631" expanded="false" signature="1738:1864" ph="/// Gets or sets the assembly path. ... " />
-            <marker date="1513947303631" expanded="false" signature="1923:2053" ph="/// Gets or sets the console culture. ... " />
-            <marker date="1513947303631" expanded="false" signature="2114:2246" ph="/// Gets or sets the component loader. ... " />
-            <marker date="1513947303631" expanded="false" signature="2317:2439" ph="/// Gets the assembly path. ... " />
-            <marker date="1513947303631" expanded="true" signature="2487:2710" ph="{...}" />
-            <marker date="1513947303631" expanded="false" signature="2720:2892" ph="/// Sets the in memory loader. ... " />
-            <marker date="1513947303631" expanded="true" signature="2940:3186" ph="{...}" />
-            <marker date="1513947303631" expanded="false" signature="3196:3364" ph="/// Sets the class registry. ... " />
-            <marker date="1513947303631" expanded="true" signature="3411:3581" ph="{...}" />
-            <marker date="1513947303631" expanded="false" signature="3591:3745" ph="/// Sets the culture. ... " />
-            <marker date="1513947303631" expanded="true" signature="3786:4182" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
