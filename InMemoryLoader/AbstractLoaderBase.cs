@@ -41,10 +41,11 @@ namespace InMemoryLoader
         /// </summary>
         static readonly ILog Log = LogManager.GetLogger(typeof(AbstractLoaderBase));
 
+        const string Key = AbstractComponent.Key;
         /// <summary>
-        /// The application key.
+        /// The ApplicationKey constant
         /// </summary>
-        public string ApplicationKey = AbstractComponent.Key;
+        public string ApplicationKey => Key;
 
         /// <summary>
         /// Gets or sets the assembly path.

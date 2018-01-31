@@ -23,12 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d8433480-390c-4bf7-9f67-b2b6e1af533e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/InMemoryLoader/InMemoryLoader.csproj" afterPath="$PROJECT_DIR$/InMemoryLoader/InMemoryLoader.csproj" />
-      <change beforePath="$PROJECT_DIR$/InMemoryLoader/packages.config" afterPath="$PROJECT_DIR$/InMemoryLoader/packages.config" />
-      <change beforePath="$PROJECT_DIR$/InMemoryLoaderNunit/InMemoryLoaderNunit.csproj" afterPath="$PROJECT_DIR$/InMemoryLoaderNunit/InMemoryLoaderNunit.csproj" />
-      <change beforePath="$PROJECT_DIR$/InMemoryLoaderNunit/packages.config" afterPath="$PROJECT_DIR$/InMemoryLoaderNunit/packages.config" />
-      <change beforePath="$PROJECT_DIR$/packages/InMemoryLoaderBase.1.0.0.1/InMemoryLoaderBase.1.0.0.1.nupkg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/packages/InMemoryLoaderBase.1.0.0.1/lib/InMemoryLoaderBase.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/InMemoryLoader/AbstractLoaderBase.cs" afterPath="$PROJECT_DIR$/InMemoryLoader/AbstractLoaderBase.cs" />
+      <change beforePath="$PROJECT_DIR$/InMemoryLoader/ComponentLoader.Instance.cs" afterPath="$PROJECT_DIR$/InMemoryLoader/ComponentLoader.Instance.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,31 +35,81 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AbstractLoaderBase.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AbstractLoaderBase.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/InMemoryLoader/AbstractLoaderBase.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="45" column="39" lean-forward="false" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
               <folding>
-                <marker date="1517403962417" expanded="false" signature="0:1177" ph="/* AbstractLoaderBase.cs ... */" />
-                <marker date="1517403962417" expanded="false" signature="1185:1285" ph="..." />
-                <marker date="1517403962417" expanded="true" signature="1311:4282" ph="{...}" />
-                <marker date="1517403962417" expanded="false" signature="1318:1377" ph="/// AbstractLoaderBase ... " />
-                <marker date="1517403962417" expanded="true" signature="1422:4279" ph="{...}" />
-                <marker date="1517403962417" expanded="false" signature="1437:1494" ph="/// The log. ... " />
-                <marker date="1517403962417" expanded="false" signature="1589:1658" ph="/// The application key. ... " />
-                <marker date="1517403962417" expanded="false" signature="1730:1856" ph="/// Gets or sets the assembly path. ... " />
-                <marker date="1517403962417" expanded="false" signature="1915:2045" ph="/// Gets or sets the console culture. ... " />
-                <marker date="1517403962417" expanded="false" signature="2106:2238" ph="/// Gets or sets the component loader. ... " />
-                <marker date="1517403962417" expanded="false" signature="2309:2431" ph="/// Gets the assembly path. ... " />
-                <marker date="1517403962417" expanded="true" signature="2479:2669" ph="{...}" />
-                <marker date="1517403962417" expanded="false" signature="2679:2849" ph="/// Sets the in memory loader. ... " />
-                <marker date="1517403962417" expanded="true" signature="2897:3143" ph="{...}" />
-                <marker date="1517403962417" expanded="false" signature="3153:3321" ph="/// Sets the class registry. ... " />
-                <marker date="1517403962417" expanded="true" signature="3368:3538" ph="{...}" />
-                <marker date="1517403962417" expanded="false" signature="3548:3702" ph="/// Sets the culture. ... " />
-                <marker date="1517403962417" expanded="true" signature="3743:4272" ph="{...}" />
-                <marker date="1517403962417" expanded="true" signature="3807:3886" ph="{...}" />
+                <marker date="1517407280193" expanded="true" signature="0:1177" ph="/* AbstractLoaderBase.cs ... */" />
+                <marker date="1517407280193" expanded="false" signature="1185:1285" ph="..." />
+                <marker date="1517407280193" expanded="true" signature="1311:4322" ph="{...}" />
+                <marker date="1517407280193" expanded="false" signature="1318:1377" ph="/// AbstractLoaderBase ... " />
+                <marker date="1517407280193" expanded="true" signature="1422:4319" ph="{...}" />
+                <marker date="1517407280193" expanded="false" signature="1437:1494" ph="/// The log. ... " />
+                <marker date="1517407280193" expanded="true" signature="1639:1715" ph="/// The ApplicationKey constant ... " />
+                <marker date="1517407280193" expanded="true" signature="1770:1896" ph="/// Gets or sets the assembly path. ... " />
+                <marker date="1517407280193" expanded="true" signature="1955:2085" ph="/// Gets or sets the console culture. ... " />
+                <marker date="1517407280193" expanded="true" signature="2146:2278" ph="/// Gets or sets the component loader. ... " />
+                <marker date="1517407280193" expanded="true" signature="2349:2471" ph="/// Gets the assembly path. ... " />
+                <marker date="1517407280193" expanded="true" signature="2519:2709" ph="{...}" />
+                <marker date="1517407280193" expanded="true" signature="2719:2889" ph="/// Sets the in memory loader. ... " />
+                <marker date="1517407280193" expanded="true" signature="2937:3183" ph="{...}" />
+                <marker date="1517407280193" expanded="true" signature="3193:3361" ph="/// Sets the class registry. ... " />
+                <marker date="1517407280193" expanded="true" signature="3408:3578" ph="{...}" />
+                <marker date="1517407280193" expanded="true" signature="3588:3742" ph="/// Sets the culture. ... " />
+                <marker date="1517407280193" expanded="true" signature="3783:4312" ph="{...}" />
+                <marker date="1517407280193" expanded="true" signature="3847:3926" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ComponentLoader.Instance.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/InMemoryLoader/ComponentLoader.Instance.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="63" column="63" lean-forward="false" selection-start-line="63" selection-start-column="63" selection-end-line="63" selection-end-column="63" />
+              <folding>
+                <marker date="1517407455125" expanded="false" signature="0:1183" ph="/* ComponentLoader.Instance.cs ... */" />
+                <marker date="1517407455125" expanded="false" signature="1191:1299" ph="..." />
+                <marker date="1517407455125" expanded="true" signature="1325:3473" ph="{...}" />
+                <marker date="1517407455125" expanded="false" signature="1332:1390" ph="/// Component loader. ... " />
+                <marker date="1517407455125" expanded="true" signature="1431:3471" ph="{...}" />
+                <marker date="1517407455125" expanded="false" signature="1446:1503" ph="/// The log. ... " />
+                <marker date="1517407455125" expanded="false" signature="1595:1657" ph="/// The instance. ... " />
+                <marker date="1517407455125" expanded="false" signature="1718:1781" ph="/// The sync root. ... " />
+                <marker date="1517407455125" expanded="false" signature="1847:1920" ph="/// The assembly references. ... " />
+                <marker date="1517407455125" expanded="false" signature="2062:2132" ph="/// The class references. ... " />
+                <marker date="1517407455125" expanded="true" signature="2203:2314" ph="{...}" />
+                <marker date="1517407455125" expanded="false" signature="2324:2396" ph="/// The component registry. ... " />
+                <marker date="1517407455125" expanded="false" signature="2504:2640" ph="/// Initializes a new instance of the &lt;see cref=&quot;T:InMemoryLoader.ComponentLoader&quot;/&gt; class. ... " />
+                <marker date="1517407455125" expanded="true" signature="2666:2780" ph="{...}" />
+                <marker date="1517407455125" expanded="false" signature="2790:2898" ph="/// Gets the instance. ... " />
+                <marker date="1517407455125" expanded="true" signature="2945:3465" ph="{...}" />
+                <marker date="1517407455125" expanded="true" signature="2971:3455" ph="{...}" />
+                <marker date="1517407455125" expanded="true" signature="3024:3406" ph="{...}" />
+                <marker date="1517407455125" expanded="true" signature="3147:3366" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InMemoryLoaderNunit.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/InMemoryLoaderNunit/InMemoryLoaderNunit.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="52" column="16" lean-forward="true" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+              <folding>
+                <marker date="1516475761634" expanded="true" signature="0:1178" ph="/* InMemoryLoaderNunit.cs ... */" />
+                <marker date="1516475761634" expanded="false" signature="1186:1244" ph="..." />
+                <marker date="1516475761634" expanded="true" signature="1275:2435" ph="{...}" />
+                <marker date="1516475761634" expanded="false" signature="1282:1346" ph="/// In memory loader nunit. ... " />
+                <marker date="1516475761634" expanded="true" signature="1403:2432" ph="{...}" />
+                <marker date="1516475761634" expanded="false" signature="1418:1540" ph="/// Gets the console culture. ... " />
+                <marker date="1516475761634" expanded="false" signature="1658:1780" ph="/// Gets the application key. ... " />
+                <marker date="1516475761634" expanded="false" signature="1898:1978" ph="/// Tests the abstract loader base. ... " />
+                <marker date="1516475761634" expanded="true" signature="2045:2425" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -85,6 +131,7 @@
       <list>
         <option value="$PROJECT_DIR$/InMemoryLoader/Properties/AssemblyInfo.cs" />
         <option value="$PROJECT_DIR$/InMemoryLoader/AbstractLoaderBase.cs" />
+        <option value="$PROJECT_DIR$/InMemoryLoader/ComponentLoader.Instance.cs" />
       </list>
     </option>
   </component>
@@ -195,12 +242,12 @@
       <workItem from="1514486160264" duration="12000" />
       <workItem from="1516174464232" duration="123000" />
       <workItem from="1517400667335" duration="127000" />
-      <workItem from="1517403021334" duration="1089000" />
+      <workItem from="1517403021334" duration="2801000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2117000" />
+    <option name="totallyTimeSpent" value="3829000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -251,21 +298,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/InMemoryLoader/ComponentLoader.Instance.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="22" column="10" lean-forward="true" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/InMemoryLoader/Documentation/InMemoryLoader.cd" />
-    <entry file="file://$PROJECT_DIR$/InMemoryLoaderNunit/InMemoryLoaderNunit.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/InMemoryLoader/Properties/AssemblyInfo.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -281,28 +314,74 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/InMemoryLoader/AbstractLoaderBase.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        <state relative-caret-position="210">
+          <caret line="45" column="39" lean-forward="false" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
           <folding>
-            <marker date="1517403962417" expanded="false" signature="0:1177" ph="/* AbstractLoaderBase.cs ... */" />
-            <marker date="1517403962417" expanded="false" signature="1185:1285" ph="..." />
-            <marker date="1517403962417" expanded="true" signature="1311:4282" ph="{...}" />
-            <marker date="1517403962417" expanded="false" signature="1318:1377" ph="/// AbstractLoaderBase ... " />
-            <marker date="1517403962417" expanded="true" signature="1422:4279" ph="{...}" />
-            <marker date="1517403962417" expanded="false" signature="1437:1494" ph="/// The log. ... " />
-            <marker date="1517403962417" expanded="false" signature="1589:1658" ph="/// The application key. ... " />
-            <marker date="1517403962417" expanded="false" signature="1730:1856" ph="/// Gets or sets the assembly path. ... " />
-            <marker date="1517403962417" expanded="false" signature="1915:2045" ph="/// Gets or sets the console culture. ... " />
-            <marker date="1517403962417" expanded="false" signature="2106:2238" ph="/// Gets or sets the component loader. ... " />
-            <marker date="1517403962417" expanded="false" signature="2309:2431" ph="/// Gets the assembly path. ... " />
-            <marker date="1517403962417" expanded="true" signature="2479:2669" ph="{...}" />
-            <marker date="1517403962417" expanded="false" signature="2679:2849" ph="/// Sets the in memory loader. ... " />
-            <marker date="1517403962417" expanded="true" signature="2897:3143" ph="{...}" />
-            <marker date="1517403962417" expanded="false" signature="3153:3321" ph="/// Sets the class registry. ... " />
-            <marker date="1517403962417" expanded="true" signature="3368:3538" ph="{...}" />
-            <marker date="1517403962417" expanded="false" signature="3548:3702" ph="/// Sets the culture. ... " />
-            <marker date="1517403962417" expanded="true" signature="3743:4272" ph="{...}" />
-            <marker date="1517403962417" expanded="true" signature="3807:3886" ph="{...}" />
+            <marker date="1517407280193" expanded="true" signature="0:1177" ph="/* AbstractLoaderBase.cs ... */" />
+            <marker date="1517407280193" expanded="false" signature="1185:1285" ph="..." />
+            <marker date="1517407280193" expanded="true" signature="1311:4322" ph="{...}" />
+            <marker date="1517407280193" expanded="false" signature="1318:1377" ph="/// AbstractLoaderBase ... " />
+            <marker date="1517407280193" expanded="true" signature="1422:4319" ph="{...}" />
+            <marker date="1517407280193" expanded="false" signature="1437:1494" ph="/// The log. ... " />
+            <marker date="1517407280193" expanded="true" signature="1639:1715" ph="/// The ApplicationKey constant ... " />
+            <marker date="1517407280193" expanded="true" signature="1770:1896" ph="/// Gets or sets the assembly path. ... " />
+            <marker date="1517407280193" expanded="true" signature="1955:2085" ph="/// Gets or sets the console culture. ... " />
+            <marker date="1517407280193" expanded="true" signature="2146:2278" ph="/// Gets or sets the component loader. ... " />
+            <marker date="1517407280193" expanded="true" signature="2349:2471" ph="/// Gets the assembly path. ... " />
+            <marker date="1517407280193" expanded="true" signature="2519:2709" ph="{...}" />
+            <marker date="1517407280193" expanded="true" signature="2719:2889" ph="/// Sets the in memory loader. ... " />
+            <marker date="1517407280193" expanded="true" signature="2937:3183" ph="{...}" />
+            <marker date="1517407280193" expanded="true" signature="3193:3361" ph="/// Sets the class registry. ... " />
+            <marker date="1517407280193" expanded="true" signature="3408:3578" ph="{...}" />
+            <marker date="1517407280193" expanded="true" signature="3588:3742" ph="/// Sets the culture. ... " />
+            <marker date="1517407280193" expanded="true" signature="3783:4312" ph="{...}" />
+            <marker date="1517407280193" expanded="true" signature="3847:3926" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InMemoryLoader/ComponentLoader.Instance.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="63" column="63" lean-forward="false" selection-start-line="63" selection-start-column="63" selection-end-line="63" selection-end-column="63" />
+          <folding>
+            <marker date="1517407455125" expanded="false" signature="0:1183" ph="/* ComponentLoader.Instance.cs ... */" />
+            <marker date="1517407455125" expanded="false" signature="1191:1299" ph="..." />
+            <marker date="1517407455125" expanded="true" signature="1325:3473" ph="{...}" />
+            <marker date="1517407455125" expanded="false" signature="1332:1390" ph="/// Component loader. ... " />
+            <marker date="1517407455125" expanded="true" signature="1431:3471" ph="{...}" />
+            <marker date="1517407455125" expanded="false" signature="1446:1503" ph="/// The log. ... " />
+            <marker date="1517407455125" expanded="false" signature="1595:1657" ph="/// The instance. ... " />
+            <marker date="1517407455125" expanded="false" signature="1718:1781" ph="/// The sync root. ... " />
+            <marker date="1517407455125" expanded="false" signature="1847:1920" ph="/// The assembly references. ... " />
+            <marker date="1517407455125" expanded="false" signature="2062:2132" ph="/// The class references. ... " />
+            <marker date="1517407455125" expanded="true" signature="2203:2314" ph="{...}" />
+            <marker date="1517407455125" expanded="false" signature="2324:2396" ph="/// The component registry. ... " />
+            <marker date="1517407455125" expanded="false" signature="2504:2640" ph="/// Initializes a new instance of the &lt;see cref=&quot;T:InMemoryLoader.ComponentLoader&quot;/&gt; class. ... " />
+            <marker date="1517407455125" expanded="true" signature="2666:2780" ph="{...}" />
+            <marker date="1517407455125" expanded="false" signature="2790:2898" ph="/// Gets the instance. ... " />
+            <marker date="1517407455125" expanded="true" signature="2945:3465" ph="{...}" />
+            <marker date="1517407455125" expanded="true" signature="2971:3455" ph="{...}" />
+            <marker date="1517407455125" expanded="true" signature="3024:3406" ph="{...}" />
+            <marker date="1517407455125" expanded="true" signature="3147:3366" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InMemoryLoaderNunit/InMemoryLoaderNunit.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="52" column="16" lean-forward="true" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+          <folding>
+            <marker date="1516475761634" expanded="true" signature="0:1178" ph="/* InMemoryLoaderNunit.cs ... */" />
+            <marker date="1516475761634" expanded="false" signature="1186:1244" ph="..." />
+            <marker date="1516475761634" expanded="true" signature="1275:2435" ph="{...}" />
+            <marker date="1516475761634" expanded="false" signature="1282:1346" ph="/// In memory loader nunit. ... " />
+            <marker date="1516475761634" expanded="true" signature="1403:2432" ph="{...}" />
+            <marker date="1516475761634" expanded="false" signature="1418:1540" ph="/// Gets the console culture. ... " />
+            <marker date="1516475761634" expanded="false" signature="1658:1780" ph="/// Gets the application key. ... " />
+            <marker date="1516475761634" expanded="false" signature="1898:1978" ph="/// Tests the abstract loader base. ... " />
+            <marker date="1516475761634" expanded="true" signature="2045:2425" ph="{...}" />
           </folding>
         </state>
       </provider>

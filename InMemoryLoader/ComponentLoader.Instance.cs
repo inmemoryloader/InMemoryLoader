@@ -56,15 +56,21 @@ namespace InMemoryLoader
         /// </summary>
         readonly Hashtable _assemblyReferences = new Hashtable();
 
+        IDictionary<string, IDynamicClassInfo> _classReferences;
+
         /// <summary>
         /// The class references.
         /// </summary>
-        IDictionary<string, IDynamicClassInfo> ClassReferences;
+        private IDictionary<string, IDynamicClassInfo> ClassReferences
+        {
+            get { return _classReferences; }
+            set { _classReferences = value; }
+        }
 
         /// <summary>
         /// The component registry.
         /// </summary>
-        public IDictionary<IDynamicClassSetup, IDynamicClassInfo> ComponentRegistry;
+        public IDictionary<IDynamicClassSetup, IDynamicClassInfo> ComponentRegistry { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:InMemoryLoader.ComponentLoader"/> class.
