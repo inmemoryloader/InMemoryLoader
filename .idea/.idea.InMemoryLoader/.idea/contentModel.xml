@@ -10,9 +10,6 @@
         <e p="ComponentLoader.Init.cs" t="Include" />
         <e p="ComponentLoader.Instance.cs" t="Include" />
         <e p="ComponentLoader.Invoke.cs" t="Include" />
-        <e p="Documentation" t="Include">
-          <e p="InMemoryLoader.cd" t="Include" />
-        </e>
         <e p="Helper" t="Include">
           <e p="ObjectHelper.cs" t="Include" />
         </e>
