@@ -1,9 +1,9 @@
 ﻿//
 // ObjectHelper.cs
 //
-// Author: Kay Stuckenschmidt <mailto.kaysta@gmail.com>
+// Author: responsive kaysta
 //
-// Copyright (c) 2017 responsive-kaysta
+// Copyright (c) 2017 responsive kaysta
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -47,6 +47,7 @@ namespace InMemoryLoader.Helper
             var value = paramObject.GetType().GetField(fieldName).GetValue(paramObject);
             return value;
         }
+
         /// <summary>
         /// Gets the property value.
         /// </summary>

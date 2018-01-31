@@ -1,7 +1,7 @@
 ﻿//
 // AbstractLoaderBase.cs
 //
-// Author: Kay Stuckenschmidt
+// Author: responsive kaysta
 //
 // Copyright (c) 2017 responsive kaysta
 //
@@ -44,7 +44,7 @@ namespace InMemoryLoader
         /// <summary>
         /// The application key.
         /// </summary>
-        public string ApplicationKey = AbstractPowerUpComponent.Key;
+        public string ApplicationKey = AbstractComponent.Key;
 
         /// <summary>
         /// Gets or sets the assembly path.
@@ -79,7 +79,7 @@ namespace InMemoryLoader
         /// <summary>
         /// Sets the in memory loader.
         /// </summary>
-        /// <returns><c>true</c>, if in memory loader was set, <c>false</c> otherwise.</returns>
+        /// <returns><c>true</c>, if InMemoryLoader was set, <c>false</c> otherwise.</returns>
         public virtual bool SetInMemoryLoader()
         {
             GetAssemblyPath();
@@ -106,6 +106,10 @@ namespace InMemoryLoader
         /// <returns><c>true</c>, if culture was set, <c>false</c> otherwise.</returns>
         public virtual bool SetCulture()
         {
+            if (string.IsNullOrEmpty(ConsoleCulture))
+            {
+                throw new ArgumentNullException();
+            }
             var specificCulture = CultureInfo.CreateSpecificCulture(ConsoleCulture);
             var uiCulture = new CultureInfo(ConsoleCulture);
             Thread.CurrentThread.CurrentCulture = specificCulture;
