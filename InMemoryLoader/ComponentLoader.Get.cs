@@ -53,19 +53,15 @@ namespace InMemoryLoader
                     assembly = (Assembly) _assemblyReferences[assemblyName];
 
                 foreach (var type in assembly.GetTypes())
-                    if (type.IsClass && type.IsPublic &&
-                        type.FullName.EndsWith("." + className, StringComparison.InvariantCultureIgnoreCase))
+                    if (type.IsClass && type.IsPublic && type.FullName.EndsWith("." + className, StringComparison.InvariantCultureIgnoreCase))
                     {
                         IDynamicClassInfo classInfo = new DynamicClassInfo(type, Activator.CreateInstance(type));
 
-                        if (typeof(AbstractComponent).IsAssignableFrom(classInfo.ClassType)
-                        ) ////TODO: instace of type AbstractComponent
-                        {
-                            ClassReferences.Add(assemblyName, classInfo);
-                            return classInfo;
-                        }
+                        if (!typeof(AbstractComponent).IsAssignableFrom(classInfo.ClassType))
+                            throw new Exception("Class is not typeof(InMemoryLoaderBase.AbstractPowerUpComponent)");
+                        ClassReferences.Add(assemblyName, classInfo);
+                        return classInfo;
 
-                        throw new Exception("Class is not typeof(InMemoryLoaderBase.AbstractPowerUpComponent)");
                     }
 
                 throw new Exception("Could not instantiate Class");
