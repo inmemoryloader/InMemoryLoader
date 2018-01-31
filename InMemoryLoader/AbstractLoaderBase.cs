@@ -70,10 +70,9 @@ namespace InMemoryLoader
         /// <returns>The assembly path.</returns>
         public virtual string GetAssemblyPath()
         {
-            var compPath = string.Empty;
-            compPath = AppDomain.CurrentDomain.BaseDirectory;
+            AssemblyPath = AppDomain.CurrentDomain.BaseDirectory;
             Log.DebugFormat("AssemblyPath set to: {0}", AssemblyPath);
-            return compPath;
+            return AssemblyPath;
         }
 
         /// <summary>
