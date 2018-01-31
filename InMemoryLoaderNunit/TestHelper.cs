@@ -28,12 +28,12 @@ using InMemoryLoader;
 namespace InMemoryLoaderNunit
 {
     /// <summary>
-    /// Test helper.
+    ///     Test helper.
     /// </summary>
     internal class TestHelper : AbstractLoaderBase
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TestHelper"/> class.
+        ///     Initializes a new instance of the <see cref="TestHelper" /> class.
         /// </summary>
         /// <param name="culture">Culture.</param>
         /// <param name="path">Path.</param>
@@ -44,18 +44,18 @@ namespace InMemoryLoaderNunit
         }
 
         /// <summary>
-        /// Determines whether this instance is assembly path set.
+        ///     Determines whether this instance is assembly path set.
         /// </summary>
         /// <returns><c>true</c> if this instance is assembly path set; otherwise, <c>false</c>.</returns>
         internal bool IsAssemblyPathSet()
         {
             var path = GetAssemblyPath();
-            bool isSet = false || !string.IsNullOrEmpty(path);
+            var isSet = false || !string.IsNullOrEmpty(path);
             return isSet;
         }
 
         /// <summary>
-        /// Determines whether this instance is culture set.
+        ///     Determines whether this instance is culture set.
         /// </summary>
         /// <returns><c>true</c> if this instance is culture set; otherwise, <c>false</c>.</returns>
         internal bool IsCultureSet()
@@ -64,7 +64,7 @@ namespace InMemoryLoaderNunit
         }
 
         /// <summary>
-        /// Determines whether this instance is in memory loader set.
+        ///     Determines whether this instance is in memory loader set.
         /// </summary>
         /// <returns><c>true</c> if this instance is in memory loader set; otherwise, <c>false</c>.</returns>
         internal bool IsInMemoryLoaderSet()
@@ -73,14 +73,12 @@ namespace InMemoryLoaderNunit
         }
 
         /// <summary>
-        /// Determines whether this instance is registry set.
+        ///     Determines whether this instance is registry set.
         /// </summary>
         /// <returns><c>true</c> if this instance is registry set; otherwise, <c>false</c>.</returns>
         internal bool IsRegistrySet()
         {
             return SetClassRegistry();
         }
-
     }
-
 }

@@ -23,26 +23,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using InMemoryLoaderBase;
 using System;
 using System.Reflection;
+using InMemoryLoaderBase;
 
 namespace InMemoryLoader
 {
     public partial class ComponentLoader
     {
         /// <summary>
-        /// Invokes the method.
+        ///     Invokes the method.
         /// </summary>
         /// <returns>The method.</returns>
         /// <param name="classInfo">Class info.</param>
         /// <param name="methodName">Method name.</param>
         /// <param name="paramArgs">Parameter arguments.</param>
-        public dynamic InvokeMethod(IDynamicClassInfo classInfo, string methodName, Object[] paramArgs)
+        public dynamic InvokeMethod(IDynamicClassInfo classInfo, string methodName, object[] paramArgs)
         {
             try
             {
-                var result = classInfo.ClassType.InvokeMember(methodName, BindingFlags.Default | BindingFlags.InvokeMethod, null, classInfo.ClassObject, paramArgs);
+                var result = classInfo.ClassType.InvokeMember(methodName,
+                    BindingFlags.Default | BindingFlags.InvokeMethod, null, classInfo.ClassObject, paramArgs);
                 return result;
             }
             catch (Exception)
@@ -52,19 +53,19 @@ namespace InMemoryLoader
         }
 
         /// <summary>
-        /// Invokes the method.
+        ///     Invokes the method.
         /// </summary>
         /// <returns>The method.</returns>
         /// <param name="assemblyName">Assembly name.</param>
         /// <param name="className">Class name.</param>
         /// <param name="methodName">Method name.</param>
         /// <param name="paramArgs">Parameter arguments.</param>
-        public dynamic InvokeMethod(string assemblyName, string className, string methodName, Object[] paramArgs)
+        public dynamic InvokeMethod(string assemblyName, string className, string methodName, object[] paramArgs)
         {
             try
             {
                 var classInfo = GetClassReference(assemblyName, className);
-                var result = (InvokeMethod(classInfo, methodName, paramArgs));
+                var result = InvokeMethod(classInfo, methodName, paramArgs);
                 return result;
             }
             catch (Exception)

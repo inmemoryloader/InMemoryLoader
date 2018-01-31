@@ -30,27 +30,27 @@ using NUnit.Framework;
 namespace InMemoryLoaderNunit
 {
     /// <summary>
-    /// In memory loader nunit.
+    ///     In memory loader nunit.
     /// </summary>
-    [TestFixture()]
+    [TestFixture]
     public class InMemoryLoaderNunit
     {
         /// <summary>
-        /// Gets the console culture.
+        ///     Gets the console culture.
         /// </summary>
         /// <value>The console culture.</value>
-        static string ConsoleCulture { get { return ConfigurationManager.AppSettings["ConsoleCulture"]; } }
+        private static string ConsoleCulture => ConfigurationManager.AppSettings["ConsoleCulture"];
 
         /// <summary>
-        /// Gets the application key.
+        ///     Gets the application key.
         /// </summary>
         /// <value>The application key.</value>
-        static string ApplicationKey { get { return ConfigurationManager.AppSettings["ApplicationKey"]; } }
+        private static string ApplicationKey => ConfigurationManager.AppSettings["ApplicationKey"];
 
         /// <summary>
-        /// Tests the abstract loader base.
+        ///     Tests the abstract loader base.
         /// </summary>
-        [Test()]
+        [Test]
         public void TestCase_AbstractLoaderBase()
         {
             var path = AppDomain.CurrentDomain.BaseDirectory;
@@ -62,7 +62,5 @@ namespace InMemoryLoaderNunit
             Assert.IsTrue(testHelper.IsInMemoryLoaderSet());
             Assert.IsTrue(testHelper.IsRegistrySet());
         }
-
     }
-
 }
