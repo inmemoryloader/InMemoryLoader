@@ -34,12 +34,9 @@ namespace InMemoryLoader.UnitTests
         [Test()]
         public void TestCase()
         {
-
             var loader = ComponentLoader.Instance;
 
-
             Assert.IsNotNull(loader);
-
         }
     }
 }
