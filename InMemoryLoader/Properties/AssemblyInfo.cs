@@ -5,12 +5,10 @@ using System.Runtime.InteropServices;
 // Change them to the values specific to your project.
 [assembly: AssemblyTitle("InMemoryLoader")]
 [assembly: AssemblyDescription("InMemoryLoader library, used to implement powerfull .NET InMemoryLoader applications.")]
-[assembly: AssemblyConfiguration("DEBUG")]
 [assembly: AssemblyCompany("responsive IT")]
 [assembly: AssemblyProduct("InMemoryLoader")]
 [assembly: AssemblyCopyright("responsive IT")]
 [assembly: AssemblyTrademark("responsive IT")]
-[assembly: AssemblyCulture("en-GB")]
 
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
 // The form "{Major}.{Minor}.*" will automatically update the build and revision,

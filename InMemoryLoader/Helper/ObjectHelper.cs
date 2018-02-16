@@ -54,7 +54,7 @@ namespace InMemoryLoader.Helper
         public static object GetPropertyValue(string propertyName, object paramObject)
         {
             if (string.IsNullOrEmpty(propertyName) || paramObject == null) throw new ArgumentNullException();
-            var value = paramObject.GetType().GetProperty(propertyName).GetValue(paramObject);
+            var value = paramObject.GetType().GetProperty(propertyName)?.GetValue(paramObject);
             return value;
         }
     }

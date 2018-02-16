@@ -42,9 +42,11 @@ namespace InMemoryLoader
 
             foreach (var item in ClassReferences)
             {
-                var dynclass = new DynamicClassSetup();
-                dynclass.Assembly = item.Key;
-                dynclass.Class = item.Value.ClassType.Name;
+                var dynclass = new DynamicClassSetup
+                {
+                    Assembly = item.Key,
+                    Class = item.Value.ClassType.Name
+                };
 
                 var type = GetClassReference(dynclass.Class);
 
@@ -75,8 +77,7 @@ namespace InMemoryLoader
         {
             try
             {
-                var returnObject =
-                    InvokeMethod(classSetup.Assembly, classSetup.Class, classSetup.InitMethod, paramArgs);
+                var returnObject = InvokeMethod(classSetup.Assembly, classSetup.Class, classSetup.InitMethod, paramArgs);
                 return returnObject;
             }
             catch (Exception)
