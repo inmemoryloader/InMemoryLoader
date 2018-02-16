@@ -11,7 +11,6 @@
 das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <SignAssembly>true</SignAssembly>
-    <ReleaseVersion>1.0.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>InMemoryLoader.snk</AssemblyOriginatorKeyFile>
@@ -35,7 +34,7 @@ das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
     </Reference>
     <Reference Include="System" />
     <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoaderBase.1.0.6609.19828\lib\InMemoryLoaderBase.dll</HintPath>
+      <HintPath>..\..\InMemoryLoader.Master\packages\InMemoryLoaderBase.1.0.6612.39266\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
