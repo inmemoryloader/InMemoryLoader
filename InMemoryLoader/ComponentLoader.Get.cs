@@ -57,13 +57,13 @@ namespace InMemoryLoader
                     {
                         IDynamicClassInfo classInfo = new DynamicClassInfo(type, Activator.CreateInstance(type));
 
-                        if (!typeof(AbstractComponent).IsAssignableFrom(classInfo.ClassType))
+                        if (!typeof(IAbstractComponent).IsAssignableFrom(classInfo.ClassType))
                             throw new Exception("Class is not typeof(InMemoryLoaderBase.AbstractComponent)");
                         ClassReferences.Add(assemblyName, classInfo);
                         return classInfo;
                     }
 
-                throw new Exception("Could not instantiate Class");
+                throw new Exception($"Cannot instatiate class: {className}");
             }
 
             return (DynamicClassInfo) ClassReferences[assemblyName];

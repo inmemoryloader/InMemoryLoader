@@ -50,19 +50,19 @@ namespace InMemoryLoader
 
                 var type = GetClassReference(dynclass.Class);
 
-                if (!ComponentRegistry.Keys.Any(ky => ky.Assembly.Contains(dynclass.Assembly)))
-                {
-                    ComponentRegistry.Add(dynclass, type);
-                    if (Log.IsDebugEnabled)
-                        Log.DebugFormat("Add AssemblyName: {0}, ClassType.FullName: {1} to ComponentRegistry",
-                            dynclass.Assembly, dynclass.Class);
-                }
+                if (ComponentRegistry.Keys.Any(ky => ky.Assembly.Contains(dynclass.Assembly))) continue;
+                
+                ComponentRegistry.Add(dynclass, type);
+                
+                if (Log.IsDebugEnabled)
+                    Log.DebugFormat("Add AssemblyName: {0}, ClassType.FullName: {1} to ComponentRegistry", dynclass.Assembly, dynclass.Class);
             }
 
-            if (Log.IsDebugEnabled)
+            if (!Log.IsDebugEnabled) return true;
+            {
                 foreach (var item in ComponentRegistry)
-                    Log.InfoFormat("ComponentRegistry contains AssemblyName: {0}, ClassType.FullName: {1}",
-                        item.Key.Assembly, item.Key.Class);
+                    Log.InfoFormat("ComponentRegistry contains AssemblyName: {0}, ClassType.FullName: {1}", item.Key.Assembly, item.Key.Class);
+            }
 
             return true;
         }
