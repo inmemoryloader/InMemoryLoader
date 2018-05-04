@@ -53,7 +53,10 @@ namespace InMemoryLoader
                     assembly = (Assembly) _assemblyReferences[assemblyName];
 
                 foreach (var type in assembly.GetTypes())
-                    if (type.FullName != null && (type.IsClass && type.IsPublic && type.FullName.EndsWith("." + className, StringComparison.InvariantCultureIgnoreCase)))
+                {
+                    if (type.FullName != null && (type.IsClass && type.IsPublic &&
+                                                  type.FullName.EndsWith("." + className,
+                                                      StringComparison.InvariantCultureIgnoreCase)))
                     {
                         IDynamicClassInfo classInfo = new DynamicClassInfo(type, Activator.CreateInstance(type));
 
@@ -62,6 +65,7 @@ namespace InMemoryLoader
                         ClassReferences.Add(assemblyName, classInfo);
                         return classInfo;
                     }
+                }
 
                 throw new Exception($"Cannot instatiate class: {className}");
             }

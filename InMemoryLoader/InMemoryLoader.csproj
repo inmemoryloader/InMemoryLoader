@@ -9,7 +9,7 @@
     <AssemblyName>InMemoryLoader</AssemblyName>
     <Description>InMemoryLoader ist eine in C# geschriebene Funktionsbibliothek welche 
 das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
