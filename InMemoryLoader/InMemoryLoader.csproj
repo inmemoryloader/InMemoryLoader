@@ -9,9 +9,8 @@
     <AssemblyName>InMemoryLoader</AssemblyName>
     <Description>InMemoryLoader ist eine in C# geschriebene Funktionsbibliothek welche 
 das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <SignAssembly>true</SignAssembly>
-    <ReleaseVersion>0.3.2</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>InMemoryLoader.snk</AssemblyOriginatorKeyFile>
@@ -30,13 +29,13 @@ das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InMemoryLoaderBase, Version=0.3.2.10, Culture=neutral, PublicKeyToken=0b5fb30ca5b127b9, processorArchitecture=MSIL">
-      <HintPath>..\packages\InMemoryLoaderBase.0.3.2.11\lib\InMemoryLoaderBase.dll</HintPath>
+    <Reference Include="InMemoryLoaderBase, Version=1.0.6669.34525, Culture=neutral, PublicKeyToken=0b5fb30ca5b127b9, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMemoryLoaderBase.1.0.6669.34525\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="log4net">
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -50,7 +49,6 @@ das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <None Include="Documentation\InMemoryLoader.cd" />
     <None Include="InMemoryLoader.snk" />
     <None Include="packages.config" />
   </ItemGroup>

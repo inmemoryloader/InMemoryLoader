@@ -1,9 +1,9 @@
 ﻿//
 // ComponentLoader.Get.cs
 //
-// Author: Kay Stuckenschmidt <mailto.kaysta@gmail.com>
+// Author: responsive kaysta
 //
-// Copyright (c) 2017 responsive-kaysta
+// Copyright (c) 2017 responsive kaysta
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,65 +23,58 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using InMemoryLoaderBase;
 using System;
 using System.Linq;
 using System.Reflection;
+using InMemoryLoaderBase;
 
 namespace InMemoryLoader
 {
     public partial class ComponentLoader
     {
         /// <summary>
-        /// Gets the class reference.
+        ///     Gets the class reference.
         /// </summary>
         /// <returns>The class reference.</returns>
         /// <param name="assemblyName">Assembly name.</param>
         /// <param name="className">Class name.</param>
-		public IDynamicClassInfo GetClassReference(string assemblyName, string className)
+        public IDynamicClassInfo GetClassReference(string assemblyName, string className)
         {
             if (string.IsNullOrEmpty(assemblyName) || string.IsNullOrEmpty(className))
-            {
                 throw new ArgumentNullException();
-            }
 
             if (ClassReferences.ContainsKey(assemblyName) == false)
             {
                 Assembly assembly;
 
                 if (_assemblyReferences.ContainsKey(assemblyName) == false)
-                {
                     _assemblyReferences.Add(assemblyName, assembly = Assembly.LoadFrom(assemblyName));
-                }
                 else
-                {
-                    assembly = (Assembly)_assemblyReferences[assemblyName];
-                }
+                    assembly = (Assembly) _assemblyReferences[assemblyName];
 
-                foreach (Type type in assembly.GetTypes())
+                foreach (var type in assembly.GetTypes())
                 {
-                    if (type.IsClass && type.IsPublic && type.FullName.EndsWith("." + className, StringComparison.InvariantCultureIgnoreCase))
+                    if (type.FullName != null && (type.IsClass && type.IsPublic &&
+                                                  type.FullName.EndsWith("." + className,
+                                                      StringComparison.InvariantCultureIgnoreCase)))
                     {
                         IDynamicClassInfo classInfo = new DynamicClassInfo(type, Activator.CreateInstance(type));
 
-                        if (typeof(InMemoryLoaderBase.AbstractPowerUpComponent).IsAssignableFrom(classInfo.ClassType))
-                        {
-                            ClassReferences.Add(assemblyName, classInfo);
-                            return (classInfo);
-                        }
-                        else
-                        {
-                            throw (new System.Exception("Class is not typeof(InMemoryLoaderBase.AbstractPowerUpComponent)"));
-                        }
+                        if (!typeof(IAbstractComponent).IsAssignableFrom(classInfo.ClassType))
+                            throw new Exception("Class is not typeof(InMemoryLoaderBase.AbstractComponent)");
+                        ClassReferences.Add(assemblyName, classInfo);
+                        return classInfo;
                     }
                 }
-                throw (new System.Exception("Could not instantiate Class"));
+
+                throw new Exception($"Cannot instatiate class: {className}");
             }
-            return ((DynamicClassInfo)ClassReferences[assemblyName]);
+
+            return (DynamicClassInfo) ClassReferences[assemblyName];
         }
 
         /// <summary>
-        /// Gets the class reference.
+        ///     Gets the class reference.
         /// </summary>
         /// <returns>The class reference.</returns>
         /// <param name="paramClassName">Parameter class name.</param>
