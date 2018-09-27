@@ -1,9 +1,9 @@
 ﻿//
 // ComponentLoader.Init.cs
 //
-// Author: Kay Stuckenschmidt <mailto.kaysta@gmail.com>
+// Author: responsive kaysta
 //
-// Copyright (c) 2017 responsive-kaysta
+// Copyright (c) 2017 responsive kaysta
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,63 +23,57 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using InMemoryLoaderBase;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using InMemoryLoaderBase;
 
 namespace InMemoryLoader
 {
     public partial class ComponentLoader
     {
         /// <summary>
-        /// Inits the class registry.
+        ///     Inits the class registry.
         /// </summary>
         /// <returns><c>true</c>, if class registry was inited, <c>false</c> otherwise.</returns>
         public bool InitClassRegistry()
         {
-            if (ComponentRegistry == null)
-            {
-                ComponentRegistry = new Dictionary<IDynamicClassSetup, IDynamicClassInfo>();
-            }
+            ComponentRegistry = ComponentRegistry ?? new Dictionary<IDynamicClassSetup, IDynamicClassInfo>();
 
             foreach (var item in ClassReferences)
             {
-
-                var dynclass = new DynamicClassSetup();
-                dynclass.Assembly = item.Key;
-                dynclass.Class = item.Value.ClassType.Name;
+                var dynclass = new DynamicClassSetup
+                {
+                    Assembly = item.Key,
+                    Class = item.Value.ClassType.Name
+                };
 
                 var type = GetClassReference(dynclass.Class);
 
-                if (!ComponentRegistry.Keys.Any(ky => ky.Assembly.Contains(dynclass.Assembly)))
-                {
-                    ComponentRegistry.Add(dynclass, type);
-                    if (Log.IsDebugEnabled)
-                    {
-                        Log.DebugFormat("Add AssemblyName: {0}, ClassType.FullName: {1} to ComponentRegistry", dynclass.Assembly, dynclass.Class);
-                    }
-                }
+                if (ComponentRegistry.Keys.Any(ky => ky.Assembly.Contains(dynclass.Assembly))) continue;
+                
+                ComponentRegistry.Add(dynclass, type);
+                
+                if (Log.IsDebugEnabled)
+                    Log.DebugFormat("Add AssemblyName: {0}, ClassType.FullName: {1} to ComponentRegistry", dynclass.Assembly, dynclass.Class);
             }
 
-            if (Log.IsDebugEnabled)
+            if (!Log.IsDebugEnabled) return true;
             {
                 foreach (var item in ComponentRegistry)
-                {
                     Log.InfoFormat("ComponentRegistry contains AssemblyName: {0}, ClassType.FullName: {1}", item.Key.Assembly, item.Key.Class);
-                }
             }
 
             return true;
         }
 
         /// <summary>
-        /// Inits the component.
+        ///     Inits the component.
         /// </summary>
         /// <returns>The component.</returns>
         /// <param name="classSetup">Class setup.</param>
         /// <param name="paramArgs">Parameter arguments.</param>
-		public Object InitComponent(IDynamicClassSetup classSetup, Object[] paramArgs)
+        public object InitComponent(IDynamicClassSetup classSetup, object[] paramArgs)
         {
             try
             {

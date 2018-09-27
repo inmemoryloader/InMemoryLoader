@@ -1,9 +1,9 @@
 ﻿//
 // ComponentLoader.Helper.cs
 //
-// Author: Kay Stuckenschmidt <mailto.kaysta@gmail.com>
+// Author: responsive kaysta
 //
-// Copyright (c) 2017 responsive-kaysta
+// Copyright (c) 2017 responsive kaysta
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -27,20 +27,20 @@ using System.Linq;
 
 namespace InMemoryLoader
 {
-	/// <summary>
-	/// Component loader.
-	/// </summary>
-	public partial class ComponentLoader
-	{
-		/// <summary>
-		/// Classes the exists.
-		/// </summary>
-		/// <returns><c>true</c>, if exists was classed, <c>false</c> otherwise.</returns>
-		/// <param name="paramClassName">Parameter class name.</param>
-		public bool ClassExists(string paramClassName)
-		{
-			var value = ClassReferences.FirstOrDefault(cls => cls.Value.ClassType.Name.Contains(paramClassName));
+    /// <summary>
+    ///     Component loader.
+    /// </summary>
+    public partial class ComponentLoader
+    {
+        /// <summary>
+        ///     Classes the exists.
+        /// </summary>
+        /// <returns><c>true</c>, if exists was classed, <c>false</c> otherwise.</returns>
+        /// <param name="paramClassName">Parameter class name.</param>
+        public bool ClassExists(string paramClassName)
+        {
+            var value = ClassReferences.FirstOrDefault(cls => cls.Value.ClassType.Name.Contains(paramClassName));
             return !string.IsNullOrEmpty(value.Key);
-		}
-	}
+        }
+    }
 }
