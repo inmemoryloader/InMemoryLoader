@@ -84,13 +84,10 @@ namespace InMemoryLoader
                 if (_instance != null) return _instance;
                 lock (SyncRoot)
                 {
-                    if (_instance == null)
-                    {
-                        _instance = new ComponentLoader();
-                        Log.DebugFormat("Create a new instance of Type: {0}", _instance.GetType());
-                    }
+                    if (_instance == null) _instance = new ComponentLoader();
+                    var typename = _instance.GetType();
+                    Log.DebugFormat("Create a new instance of Type: {0}", typename);
                 }
-
                 return _instance;
             }
         }

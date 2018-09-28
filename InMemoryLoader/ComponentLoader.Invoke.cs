@@ -42,8 +42,7 @@ namespace InMemoryLoader
         {
             try
             {
-                var result = classInfo.ClassType.InvokeMember(methodName,
-                    BindingFlags.Default | BindingFlags.InvokeMethod, null, classInfo.ClassObject, paramArgs);
+                var result = classInfo.ClassType.InvokeMember(methodName, BindingFlags.Default | BindingFlags.InvokeMethod, null, classInfo.ClassObject, paramArgs);
                 return result;
             }
             catch (Exception)

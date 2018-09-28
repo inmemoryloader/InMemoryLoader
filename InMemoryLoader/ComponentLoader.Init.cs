@@ -42,25 +42,27 @@ namespace InMemoryLoader
 
             foreach (var item in ClassReferences)
             {
-                var dynclass = new DynamicClassSetup();
-                dynclass.Assembly = item.Key;
-                dynclass.Class = item.Value.ClassType.Name;
+                var dynclass = new DynamicClassSetup
+                {
+                    Assembly = item.Key,
+                    Class = item.Value.ClassType.Name
+                };
 
                 var type = GetClassReference(dynclass.Class);
 
-                if (!ComponentRegistry.Keys.Any(ky => ky.Assembly.Contains(dynclass.Assembly)))
-                {
-                    ComponentRegistry.Add(dynclass, type);
-                    if (Log.IsDebugEnabled)
-                        Log.DebugFormat("Add AssemblyName: {0}, ClassType.FullName: {1} to ComponentRegistry",
-                            dynclass.Assembly, dynclass.Class);
-                }
+                if (ComponentRegistry.Keys.Any(ky => ky.Assembly.Contains(dynclass.Assembly))) continue;
+                
+                ComponentRegistry.Add(dynclass, type);
+                
+                if (Log.IsDebugEnabled)
+                    Log.DebugFormat("Add AssemblyName: {0}, ClassType.FullName: {1} to ComponentRegistry", dynclass.Assembly, dynclass.Class);
             }
 
-            if (Log.IsDebugEnabled)
+            if (!Log.IsDebugEnabled) return true;
+            {
                 foreach (var item in ComponentRegistry)
-                    Log.InfoFormat("ComponentRegistry contains AssemblyName: {0}, ClassType.FullName: {1}",
-                        item.Key.Assembly, item.Key.Class);
+                    Log.InfoFormat("ComponentRegistry contains AssemblyName: {0}, ClassType.FullName: {1}", item.Key.Assembly, item.Key.Class);
+            }
 
             return true;
         }
@@ -75,8 +77,7 @@ namespace InMemoryLoader
         {
             try
             {
-                var returnObject =
-                    InvokeMethod(classSetup.Assembly, classSetup.Class, classSetup.InitMethod, paramArgs);
+                var returnObject = InvokeMethod(classSetup.Assembly, classSetup.Class, classSetup.InitMethod, paramArgs);
                 return returnObject;
             }
             catch (Exception)
