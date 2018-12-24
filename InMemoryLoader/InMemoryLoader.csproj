@@ -11,6 +11,7 @@
 das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <SignAssembly>true</SignAssembly>
+    <ReleaseVersion>1.0.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>InMemoryLoader.snk</AssemblyOriginatorKeyFile>
@@ -36,6 +37,9 @@ das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="InMemoryLoaderBase">
+      <HintPath>..\packages\InMemoryLoaderBase.1.0.6669.34525\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -46,10 +50,17 @@ das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
     <Compile Include="ComponentLoader.Helper.cs" />
     <Compile Include="Helper\ObjectHelper.cs" />
     <Compile Include="AbstractLoaderBase.cs" />
+    <Compile Include="Extension\DateTimeExtension.cs" />
+    <Compile Include="Extension\EnumParserExtension.cs" />
+    <Compile Include="Extension\HtmlEncodeExtension.cs" />
+    <Compile Include="Extension\StringExtension.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="InMemoryLoader.snk" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extension\" />
   </ItemGroup>
 </Project>
