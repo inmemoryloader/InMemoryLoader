@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -9,19 +10,27 @@
     <AssemblyName>InMemoryLoader</AssemblyName>
     <Description>InMemoryLoader ist eine in C# geschriebene Funktionsbibliothek welche 
 das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <SignAssembly>true</SignAssembly>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <ReleaseVersion>1.0.0</ReleaseVersion>
+    <PackOnBuild>true</PackOnBuild>
+    <PackageId>InMemoryLoader</PackageId>
+    <PackageVersion>1.0.6933.201</PackageVersion>
+    <Owners>responsive kaysta</Owners>
+    <Title>Im Wesentlichen besteht InMemoryLoader aus zwei nuget-Packages die mit Mono entwickelt wurden und so über Plattformgrenzen hinweg verwendet werden können.</Title>
+    <PackageProjectUrl>https://blog.responsive-kaysta.ch/post/inmemoryloader</PackageProjectUrl>
+    <Summary>InMemoryLoader ermöglicht das Laden von .Dll's zur Laufzeit ohne fixe Referenzen in der Solution zu benötigen. Hierbei werden die .Dll’s einmalig geladen und geprüft, in eine Collection geschrieben und zur Laufzeit einmalig instanziiert.</Summary>
+    <Authors>responsive kaysta</Authors>
+    <PackageLicenseUrl>https://de.wikipedia.org/wiki/MIT-Lizenz</PackageLicenseUrl>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>InMemoryLoader.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Debug</OutputPath>
     <WarningLevel>4</WarningLevel>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-    <DocumentationFile>..\..\XmlDocumentation\InMemoryLoader.xml</DocumentationFile>
+    <DocumentationFile></DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>false</Optimize>
@@ -30,16 +39,15 @@ das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InMemoryLoaderBase, Version=1.0.6669.34525, Culture=neutral, PublicKeyToken=0b5fb30ca5b127b9, processorArchitecture=MSIL">
-      <HintPath>..\packages\InMemoryLoaderBase.1.0.6669.34525\lib\InMemoryLoaderBase.dll</HintPath>
-    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoaderBase.1.0.6669.34525\lib\InMemoryLoaderBase.dll</HintPath>
+      <HintPath>..\packages\InMemoryLoaderBase.1.0.6669.34527\lib\net47\InMemoryLoaderBase.dll</HintPath>
     </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,10 +65,10 @@ das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <None Include="InMemoryLoader.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extension\" />
   </ItemGroup>
+  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />
 </Project>

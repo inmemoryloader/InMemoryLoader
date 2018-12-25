@@ -92,3 +92,7 @@ InMemoryLoaderNunit/bin/Debug/InMemoryLoaderNunit.xml
 *.dll
 
 *.pdb
+
+*.nupkg
+
+packages/NuGet\.Build\.Packaging\.0\.2\.2/build/
