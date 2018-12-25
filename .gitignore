@@ -94,3 +94,5 @@ InMemoryLoaderNunit/bin/Debug/InMemoryLoaderNunit.xml
 *.pdb
 
 *.nupkg
+
+packages/NuGet\.Build\.Packaging\.0\.2\.2/build/
