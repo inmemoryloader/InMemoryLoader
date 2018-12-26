@@ -30,7 +30,8 @@ das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
     <OutputPath>bin\Debug</OutputPath>
     <WarningLevel>4</WarningLevel>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-    <DocumentationFile></DocumentationFile>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>false</Optimize>
@@ -39,13 +40,13 @@ das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="InMemoryLoaderBase, Version=1.0.6935.791, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMemoryLoaderBase.1.0.6935.791\lib\InMemoryLoaderBase.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="InMemoryLoaderBase">
-      <HintPath>..\packages\InMemoryLoaderBase.1.0.6669.34527\lib\net47\InMemoryLoaderBase.dll</HintPath>
-    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
   </ItemGroup>
@@ -67,8 +68,6 @@ das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Extension\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />
 </Project>

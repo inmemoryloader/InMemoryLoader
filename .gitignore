@@ -65,34 +65,14 @@ publish/
 *.publishproj
 
 # The packages folder can be ignored because of Package Restore
-# **/packages/*
+ **/packages/*
 # except build/, which is used as an MSBuild target.
-# !**/packages/build/
+ !**/packages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
-# !**/packages/repositories.config
-
-InMemoryLoader/bin/Debug/InMemoryLoader.xml
-InMemoryLoader/bin/Debug/InMemoryLoader.dll
-InMemoryLoader/bin/Debug/log4net.xml
-InMemoryLoader/bin/Debug/log4net.dll
-InMemoryLoader/bin/Debug/InMemoryLoaderBase.xml
-InMemoryLoader/bin/Debug/InMemoryLoaderBase.dll
-InMemoryLoaderNunit/bin/Debug/InMemoryLoader.dll
-InMemoryLoaderNunit/bin/Debug/nunit.framework.xml
-InMemoryLoaderNunit/bin/Debug/nunit.framework.dll
-InMemoryLoaderNunit/bin/Debug/log4net.xml
-InMemoryLoaderNunit/bin/Debug/log4net.dll
-InMemoryLoaderNunit/bin/Debug/InMemoryLoaderNunit.dll.config
-InMemoryLoaderNunit/bin/Debug/InMemoryLoaderNunit.dll
-InMemoryLoaderNunit/bin/Debug/InMemoryLoaderBase.xml
-InMemoryLoaderNunit/bin/Debug/InMemoryLoaderBase.dll
-InMemoryLoaderNunit/bin/Debug/InMemoryLoader.xml
-InMemoryLoaderNunit/bin/Debug/InMemoryLoaderNunit.xml
+ !**/packages/repositories.config
 
 *.dll
-
 *.pdb
-
 *.nupkg
+packages/
 
-packages/NuGet\.Build\.Packaging\.0\.2\.2/build/
