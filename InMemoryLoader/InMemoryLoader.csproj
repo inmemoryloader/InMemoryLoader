@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -21,6 +20,8 @@ das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
     <Summary>InMemoryLoader ermöglicht das Laden von .Dll's zur Laufzeit ohne fixe Referenzen in der Solution zu benötigen. Hierbei werden die .Dll’s einmalig geladen und geprüft, in eine Collection geschrieben und zur Laufzeit einmalig instanziiert.</Summary>
     <Authors>responsive kaysta</Authors>
     <PackageLicenseUrl>https://de.wikipedia.org/wiki/MIT-Lizenz</PackageLicenseUrl>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>InMemoryLoader.snk</AssemblyOriginatorKeyFile>
@@ -40,8 +41,8 @@ das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="InMemoryLoaderBase, Version=1.0.6935.791, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\InMemoryLoaderBase.1.0.6935.791\lib\InMemoryLoaderBase.dll</HintPath>
+    <Reference Include="InMemoryLoaderBase, Version=1.0.6935.3150, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\InMemoryLoaderBase.1.0.6935.3150\lib\InMemoryLoaderBase.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
@@ -69,5 +70,4 @@ das dynamische Laden von .NET Assemblies zur Laufzeit ermöglicht.</Description>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
-  <Import Project="..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets" Condition="Exists('..\packages\NuGet.Build.Packaging.0.2.2\build\NuGet.Build.Packaging.targets')" />
 </Project>

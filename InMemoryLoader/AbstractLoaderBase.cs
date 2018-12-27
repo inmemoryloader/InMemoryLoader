@@ -36,7 +36,7 @@ namespace InMemoryLoader
     /// </summary>
     public abstract class AbstractLoaderBase
     {
-        // private const string Key = AbstractComponent.Key;
+        private const string Key = AbstractComponent.Key;
 
         /// <summary>
         ///     The log.
@@ -46,7 +46,7 @@ namespace InMemoryLoader
         /// <summary>
         ///     The ApplicationKey constant
         /// </summary>
-        // public string ApplicationKey => Key;
+        public string ApplicationKey => Key;
 
         /// <summary>
         ///     Gets or sets the assembly path.
