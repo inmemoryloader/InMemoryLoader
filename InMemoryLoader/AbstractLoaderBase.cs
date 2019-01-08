@@ -26,6 +26,7 @@
 using System;
 using System.Globalization;
 using System.Threading;
+using System.Threading.Tasks;
 using InMemoryLoaderBase;
 using log4net;
 
@@ -115,5 +116,20 @@ namespace InMemoryLoader
             Log.DebugFormat("CurrentCulture set to: {0}", ConsoleCulture);
             return true;
         }
+
+        /// <summary>
+        /// Async execution of InMemoryLoader stuff
+        /// </summary>
+        /// <returns>The async.</returns>
+        /// <param name="classInfo">Class info.</param>
+        /// <param name="paramObject">Parameter object.</param>
+        /// <param name="paramArgs">Parameter arguments.</param>
+        public dynamic InvokeMethodAsync(IDynamicClassInfo classInfo, string paramObject, object[] paramArgs)
+        {
+            if (string.IsNullOrEmpty(paramObject) || classInfo == null || paramArgs.Length == 0) throw new ArgumentNullException();
+            return Task.Run(() => ComponentLoader.InvokeMethod(classInfo, paramObject, paramArgs));
+        }
+
     }
+
 }
