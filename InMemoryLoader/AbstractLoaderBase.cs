@@ -34,6 +34,7 @@ namespace InMemoryLoader
 {
     /// <summary>
     ///     AbstractLoaderBase
+    ///     Credits to: https://stackoverflow.com/search?q=c%23+dynamic+load+dll
     /// </summary>
     public abstract class AbstractLoaderBase
     {
