@@ -54,14 +54,13 @@ namespace InMemoryLoader
 
                 foreach (var type in assembly.GetTypes())
                 {
-                    if (type.FullName != null && (type.IsClass && type.IsPublic &&
-                                                  type.FullName.EndsWith("." + className,
-                                                      StringComparison.InvariantCultureIgnoreCase)))
+                    if (type.FullName != null && (type.IsClass && type.IsPublic && type.FullName.EndsWith("." + className, StringComparison.InvariantCultureIgnoreCase)))
                     {
                         IDynamicClassInfo classInfo = new DynamicClassInfo(type, Activator.CreateInstance(type));
 
                         if (!typeof(IAbstractComponent).IsAssignableFrom(classInfo.ClassType))
                             throw new Exception("Class is not typeof(InMemoryLoaderBase.AbstractComponent)");
+
                         ClassReferences.Add(assemblyName, classInfo);
                         return classInfo;
                     }
