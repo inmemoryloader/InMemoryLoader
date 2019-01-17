@@ -76,3 +76,5 @@ publish/
 *.nupkg
 packages/
 
+
+InMemoryLoader/bin/Debug/

@@ -32,6 +32,7 @@ namespace InMemoryLoader
 {
     /// <summary>
     ///     Component loader.
+    ///     Credits to: https://stackoverflow.com/search?q=c%23+dynamic+load+dll
     /// </summary>
     public partial class ComponentLoader
     {
