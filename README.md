@@ -16,3 +16,17 @@ Ein weiterer Vorteil besteht darin, dass so verschiedene Funktionscontainer erst
 Beispiel
 
 Bei einer Anwendung kann zuerst die Rolle des Benutzers abgefragt werden und danach die entsprechende Bibliothek/Komponenten dynamisch nachgeladen werden. Dies erhöht nicht nur die Performance, die Funktionen stehen so auch nur dem jeweiligen Kontext zur Verfügung wodurch die Anwendungen sicherer werden.
+
+## Bestandteile
+
+### InMemoryLoaderBase
+
+Komponente die eine abstrakte Klasse enthält die implementiert werden muss. Sie dient der Initialisierung und enthält ansonsten keinerlei notwendige Funktion.
+
+### InMemoryLoader
+
+Der Kern einer InMemoryLoader-Anwendung, sie enthält alle benötigten Methoden und Properties die zum Aufbau benötigt werden.
+
+### InMemoryLoaderCommon
+
+Erweiterung die zusätzliche Funktionen wie einen Async-Wrapper, Crypt-Tools, String-Utilities und Converter enthält. Wird NICHT zwingend benötigt!
