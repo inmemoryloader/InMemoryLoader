@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="InMemoryLoader.AbstractLoaderBase">
+    <Position X="0.75" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAABAAQAAAAiCAAAAMgAAAAAQAAAAAAEAAA=</HashCode>
+      <FileName>AbstractLoaderBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InMemoryLoader.ComponentLoader">
+    <Position X="3.5" Y="0.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AQAEAAAAAAAAAAAAAAEUEAAAAAgAAAACSCAAAAQAAAA=</HashCode>
+      <FileName>ComponentLoader.Helper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InMemoryLoader.Helper.ObjectHelper">
+    <Position X="7" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helper\ObjectHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InMemoryLoader.DateTimeExtension">
+    <Position X="0.75" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extension\DateTimeExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InMemoryLoader.EnumParserExtension">
+    <Position X="3" Y="5.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extension\EnumParserExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InMemoryLoader.HtmlEncodeExtension">
+    <Position X="6.25" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extension\HtmlEncodeExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InMemoryLoader.StringExtension">
+    <Position X="8.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extension\StringExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
