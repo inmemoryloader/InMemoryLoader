@@ -82,5 +82,6 @@ namespace InMemoryLoader
             var value = ClassReferences.FirstOrDefault(cls => cls.Value.ClassType.Name.Contains(paramClassName));
             return !string.IsNullOrEmpty(value.Key) ? value.Value : null;
         }
+
     }
 }

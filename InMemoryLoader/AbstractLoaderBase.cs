@@ -128,9 +128,44 @@ namespace InMemoryLoader
         public dynamic InvokeMethodAsync(IDynamicClassInfo classInfo, string paramObject, object[] paramArgs)
         {
             if (string.IsNullOrEmpty(paramObject) || classInfo == null || paramArgs.Length == 0) throw new ArgumentNullException();
-            return Task.Run(() => ComponentLoader.InvokeMethod(classInfo, paramObject, paramArgs));
+            return Task.Run(() => InvokeMethod(classInfo, paramObject, paramArgs));
         }
 
-    }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="classInfo"></param>
+        /// <param name="paramObject"></param>
+        /// <param name="paramArgs"></param>
+        /// <returns></returns>
+        public dynamic InvokeMethod(IDynamicClassInfo classInfo, string paramObject, object[] paramArgs)
+        {
+            if (string.IsNullOrEmpty(paramObject) || classInfo == null || paramArgs.Length == 0) throw new ArgumentNullException();
+            return ComponentLoader.InvokeMethod(classInfo, paramObject, paramArgs);
+        }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="classSetup"></param>
+        /// <param name="paramArgs"></param>
+        /// <returns></returns>
+        public dynamic InitComponentAsync(IDynamicClassSetup classSetup, object[] paramArgs)
+        {
+            if (classSetup == null || paramArgs.Length == 0) throw new ArgumentNullException();
+            return Task.Run(() => InitComponent(classSetup, paramArgs));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="classSetup"></param>
+        /// <param name="paramArgs"></param>
+        /// <returns></returns>
+        public dynamic InitComponent(IDynamicClassSetup classSetup, object[] paramArgs)
+        {
+            if (classSetup == null || paramArgs.Length == 0) throw new ArgumentNullException();
+            return ComponentLoader.InitComponent(classSetup, paramArgs);
+        }
+    }
 }
